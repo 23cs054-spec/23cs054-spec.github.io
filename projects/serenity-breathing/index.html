@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serenity Breathing | Hareram Kushwaha, SWE</title>
+  <meta name="description" content="Case study of Serenity Breathing: a digital mindfulness PWA built with React, TypeScript, and Firebase for guided breathing and wellness tracking.">
+  <link rel="canonical" href="https://hareramkushwaha.com.np/projects/serenity-breathing/">
+  <meta name="theme-color" content="#0b1220">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Serenity Breathing Case Study | Hareram Kushwaha">
+  <meta property="og:description" content="Digital mindfulness Progressive Web App built with React, TypeScript, and Firebase.">
+  <meta property="og:url" content="https://hareramkushwaha.com.np/projects/serenity-breathing/">
+  <meta property="og:image" content="https://hareramkushwaha.com.np/assets/projects/serenity-breathing.webp">
+  <meta property="og:site_name" content="Hareram Kushwaha">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Serenity Breathing Case Study | Hareram Kushwaha">
+  <meta name="twitter:description" content="Digital mindfulness Progressive Web App built with React, TypeScript, and Firebase.">
+  <meta name="twitter:image" content="https://hareramkushwaha.com.np/assets/projects/serenity-breathing.webp">
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts Preconnect & Display Swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+
+  <!-- Theme Script (Inline in head) -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('hk-portfolio-theme');
+      const theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGZW5VR7ZD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HGZW5VR7ZD');
+  </script>
+
+  <!-- Structured Data: BreadcrumbList & SoftwareSourceCode -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hareramkushwaha.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://hareramkushwaha.com.np/projects/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Serenity Breathing",
+            "item": "https://hareramkushwaha.com.np/projects/serenity-breathing/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://hareramkushwaha.com.np/projects/serenity-breathing/#software",
+        "name": "Serenity Breathing",
+        "headline": "Digital Mindfulness Progressive Web Application",
+        "description": "Mindfulness web application featuring guided breathing exercises, BMI calculator, and mood insight reflections built with React, TypeScript, and Firebase.",
+        "author": {
+          "@type": "Person",
+          "name": "Hareram Kushwaha",
+          "url": "https://hareramkushwaha.com.np/"
+        },
+        "codeRepository": "https://github.com/ha-re-ram/Serenity-Breathing",
+        "programmingLanguage": "TypeScript",
+        "keywords": ["React", "TypeScript", "PWA", "Firebase", "Mindfulness", "Frontend Development"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="site-logo" aria-label="Hareram Kushwaha Homepage">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#111a2e"/>
+          <path d="M18 20V44M18 32H28M28 20V44" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+          <path d="M36 20V44M46 20L36.5 32L46 44" stroke="#14b8a6" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Hareram<span class="logo-accent">.</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary site navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/projects/" class="nav-link active" aria-current="page">Projects</a>
+        <a href="/skills/" class="nav-link">Skills</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme mode">
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/about/" class="mobile-nav-link">About</a>
+      <a href="/projects/" class="mobile-nav-link active">Projects</a>
+      <a href="/skills/" class="mobile-nav-link">Skills</a>
+      <a href="/contact/" class="mobile-nav-link">Contact</a>
+      <a href="/resume/" class="mobile-nav-link" style="color: var(--accent-teal);">Resume (PDF)</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="container breadcrumbs">
+      <nav aria-label="Breadcrumbs">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item"><a href="/">Home</a></li>
+          <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+          <li class="breadcrumbs-item"><a href="/projects/">Projects</a></li>
+          <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+          <li class="breadcrumbs-item" aria-current="page">Serenity Breathing</li>
+        </ol>
+      </nav>
+    </div>
+
+    <article class="container">
+      <header class="case-study-hero reveal">
+        <span class="section-tag">Case Study</span>
+        <h1 class="hero-title" style="margin-top: var(--space-2);">Serenity Breathing</h1>
+        <p class="section-subtitle">
+          A digital mindfulness and wellness web application designed to support breathwork exercises, BMI tracking, and personal mood insights.
+        </p>
+
+        <!-- Metadata Grid -->
+        <div class="case-study-meta-grid">
+          <div>
+            <div class="meta-item-label">Author / Role</div>
+            <div class="meta-item-value">Hareram Kushwaha (Creator)</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Tech Stack</div>
+            <div class="meta-item-value">React, TypeScript, PWA, Firebase</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Category</div>
+            <div class="meta-item-value">Frontend / PWA</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Repository</div>
+            <div class="meta-item-value"><a href="https://github.com/ha-re-ram/Serenity-Breathing" target="_blank" rel="noopener noreferrer" class="inline-link">GitHub Repo</a></div>
+          </div>
+        </div>
+
+        <!-- Project Hero Image -->
+        <div class="case-study-image-wrapper">
+          <img src="/assets/projects/serenity-breathing.webp" alt="Serenity Breathing web app preview" width="1200" height="750" fetchpriority="high">
+        </div>
+      </header>
+
+      <!-- Problem Statement -->
+      <section class="case-study-section reveal">
+        <h2>The Problem</h2>
+        <p>
+          Many wellness and breathing exercise tools are either locked behind native mobile app store walls or overloaded with intrusive subscriptions and distracting advertisements. Users seeking a quick, calming breathing routine on desktop or mobile need an immediate, lightweight application that loads quickly and works offline.
+        </p>
+        <p>
+          The goal of Serenity Breathing was to create a focused, accessible, and privacy-conscious web app that guides users through scientific breathing techniques (such as box breathing and 4-7-8 cycles) without friction, complete with helpful wellness utilities like BMI estimation and mood logging.
+        </p>
+      </section>
+
+      <!-- Role & Stack -->
+      <section class="case-study-section reveal">
+        <h2>My Role &amp; Technical Stack</h2>
+        <p>
+          I designed and built the application independently from scratch:
+        </p>
+        <ul style="list-style: disc; margin-left: var(--space-6); margin-bottom: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2);">
+          <li><strong>Frontend:</strong> React with TypeScript for type-safe component state management and clean interface modularity.</li>
+          <li><strong>PWA Integration:</strong> Web app manifest and service worker configuration allowing the app to be installed directly to home screens and accessed without a network connection.</li>
+          <li><strong>Backend Services:</strong> Firebase for authentication and persistent cloud storage of user preferences and session history.</li>
+          <li><strong>Styling:</strong> Responsive CSS with smooth timing functions for the breathing animation loop.</li>
+        </ul>
+      </section>
+
+      <!-- Key Features -->
+      <section class="case-study-section reveal">
+        <h2>Key Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+          <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-teal);">
+            <h4>Guided Breathing Cycles</h4>
+            <p style="font-size: var(--text-sm); margin-bottom: 0;">
+              Visual and timed prompts guiding inhalation, holding, and exhalation intervals with customizable pacing.
+            </p>
+          </div>
+          <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-indigo);">
+            <h4>Health BMI Tracker</h4>
+            <p style="font-size: var(--text-sm); margin-bottom: 0;">
+              Interactive calculator computing Body Mass Index with immediate category breakdowns and recommendations.
+            </p>
+          </div>
+          <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-pink);">
+            <h4>Mood Insights</h4>
+            <p style="font-size: var(--text-sm); margin-bottom: 0;">
+              A simple reflection log allowing users to note their mental state before and after completing breathwork sessions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Decisions -->
+      <section class="case-study-section reveal">
+        <h2>Technical Decisions</h2>
+        <div class="callout-box" style="border-left-color: var(--accent-teal);">
+          <h4>TypeScript for Timing State Safety</h4>
+          <p style="font-size: var(--text-sm); margin-bottom: 0;">
+            Breathing cycles rely on strict state transitions (<code>INHALE &rarr; HOLD &rarr; EXHALE &rarr; REST</code>). Defining union types and strict interfaces prevented state race conditions during timer intervals.
+          </p>
+        </div>
+
+        <div class="callout-box" style="border-left-color: var(--accent-indigo);">
+          <h4>PWA Architecture for Zero-Friction Access</h4>
+          <p style="font-size: var(--text-sm); margin-bottom: 0;">
+            By packaging the application as a Progressive Web App, users avoid having to download a large mobile app store bundle while still benefiting from standalone display mode and offline capability.
+          </p>
+        </div>
+      </section>
+
+      <!-- Challenges & What I'd Improve Next -->
+      <section class="case-study-section reveal">
+        <h2>What I'd Improve Next</h2>
+        <ul style="list-style: disc; margin-left: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
+          <li><strong>Audio Haptics &amp; Chimes:</strong> Add optional subtle ambient sound frequencies and Web Vibration API haptic pulses for eyes-closed meditation sessions.</li>
+          <li><strong>Local-First IndexedDB Sync:</strong> Allow full offline data logging with automatic conflict-free synchronization to Firebase when connectivity resumes.</li>
+          <li><strong>Exportable Summaries:</strong> Enable users to export their weekly mindfulness minutes and mood progress as clean markdown or PDF summaries.</li>
+        </ul>
+      </section>
+
+      <!-- Project Navigation Footer -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-8) 0; border-top: 1px solid var(--border-subtle); margin-top: var(--space-8);" class="reveal">
+        <a href="/projects/" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>All Projects</span>
+        </a>
+        <a href="/projects/nexiserp/" class="btn btn-primary">
+          <span>Next: NexisERP Case Study</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="site-logo">
+            <span class="logo-text">Hareram Kushwaha<span class="logo-accent">.</span></span>
+          </a>
+          <p>
+            Software Engineer &bull; B.Tech Computer Science Engineering student at KPRIET, Coimbatore, India.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/about/" class="footer-link">About</a></li>
+            <li><a href="/projects/" class="footer-link">Projects</a></li>
+            <li><a href="/skills/" class="footer-link">Skills</a></li>
+            <li><a href="/resume/" class="footer-link">Resume &amp; PDF</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <ul class="footer-links">
+            <li><a href="/contact/" class="footer-link">Contact Form</a></li>
+            <li><a href="mailto:hareramkushwaha054@gmail.com" class="footer-link">Direct Email</a></li>
+            <li><a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+            <li><a href="https://in.linkedin.com/in/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Hareram Kushwaha. Clean static portfolio engineered for performance and accessibility.
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://in.linkedin.com/in/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:hareramkushwaha054@gmail.com" aria-label="Send Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/navigation.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+</body>
+</html>

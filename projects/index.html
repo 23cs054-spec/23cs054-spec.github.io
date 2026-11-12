@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Hareram Kushwaha, Software Engineer</title>
-  <meta name="description" content="Explore software engineering case studies, systems architecture, and web projects designed and engineered by Hareram Kushwaha.">
+  <meta name="description" content="Explore software engineering case studies, full-stack applications, and systems projects developed by Hareram Kushwaha from public GitHub repositories.">
   <link rel="canonical" href="https://hareramkushwaha.com.np/projects/">
   <meta name="theme-color" content="#0b1220">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects | Hareram Kushwaha, Software Engineer">
-  <meta property="og:description" content="Explore software engineering case studies and systems architecture designed by Hareram Kushwaha.">
+  <meta property="og:description" content="Explore software engineering case studies and systems projects developed by Hareram Kushwaha.">
   <meta property="og:url" content="https://hareramkushwaha.com.np/projects/">
   <meta property="og:image" content="https://hareramkushwaha.com.np/assets/og-image.png">
   <meta property="og:site_name" content="Hareram Kushwaha">
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Projects | Hareram Kushwaha, Software Engineer">
-  <meta name="twitter:description" content="Explore software engineering case studies and systems architecture designed by Hareram Kushwaha.">
+  <meta name="twitter:description" content="Explore software engineering case studies and systems projects developed by Hareram Kushwaha.">
   <meta name="twitter:image" content="https://hareramkushwaha.com.np/assets/og-image.png">
 
   <!-- Favicon & PWA -->
@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/animations.css">
 
-  <!-- Theme Script (Inline to prevent FOUC) -->
+  <!-- Theme Script (Inline in head) -->
   <script>
     (function () {
       const saved = localStorage.getItem('hk-portfolio-theme');
@@ -84,8 +84,8 @@
         "@type": "CollectionPage",
         "@id": "https://hareramkushwaha.com.np/projects/#webpage",
         "url": "https://hareramkushwaha.com.np/projects/",
-        "name": "Engineering Projects and Case Studies",
-        "description": "Filterable archive of software engineering case studies and systems projects by Hareram Kushwaha."
+        "name": "Software Engineering Projects & Case Studies",
+        "description": "Featured software engineering projects, web applications, and systems tools by Hareram Kushwaha."
       }
     ]
   }
@@ -159,128 +159,253 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">Case Studies</span>
-          <h1 class="section-title">Engineering Projects &amp; Architectures</h1>
+          <h1 class="section-title">Projects &amp; Case Studies</h1>
           <p class="section-subtitle">
-            An in-depth look at systems I have designed and built. Filter by specialization below to view problem statements, architecture trade-offs, and outcomes.
+            Six featured repositories from my public GitHub, categorized by domain. Each case study details what the project does, the technical stack, design decisions, and areas for future improvement.
           </p>
         </div>
 
         <!-- Filter Bar -->
-        <div class="filter-bar reveal" role="toolbar" aria-label="Filter projects by category">
-          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Systems (3)</button>
+        <div class="filter-bar reveal" role="toolbar" aria-label="Filter projects by specialization">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Projects (6)</button>
           <button type="button" class="filter-btn" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
-          <button type="button" class="filter-btn" data-filter="backend" aria-pressed="false">Backend &amp; Distributed</button>
-          <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">High-Performance Web</button>
+          <button type="button" class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
+          <button type="button" class="filter-btn" data-filter="systems" aria-pressed="false">Systems &amp; Algorithms</button>
         </div>
 
-        <!-- Filterable Grid -->
-        <div class="projects-grid projects-grid-3 reveal-stagger">
-          <!-- Project 1: Trinity Palace -->
-          <article class="project-card spotlight-card" data-category="web fullstack">
+        <!-- 6 Featured Project Cards Grid -->
+        <div class="projects-grid reveal-stagger">
+          <!-- 1. Serenity Breathing -->
+          <article class="project-card spotlight-card" data-category="frontend">
             <div class="project-thumbnail">
-              <img src="/assets/projects/trinity-palace.webp" alt="Trinity Palace luxury resort marketing website preview" width="600" height="375" loading="lazy">
+              <img src="/assets/projects/serenity-breathing.webp" alt="Serenity Breathing web app preview" width="600" height="375" loading="lazy">
             </div>
             <div class="project-content">
-              <span class="project-category">High-Performance Web &bull; Commercial</span>
+              <span class="project-category">Frontend &bull; Progressive Web App</span>
               <h2 class="project-title">
-                <a href="/projects/trinity-palace/">Trinity Palace Website</a>
+                <a href="/projects/serenity-breathing/">Serenity Breathing</a>
               </h2>
               <p class="project-excerpt">
-                Marketing platform for a premier wedding and resort destination in Bokaro. Built with an 80:20 gold-and-white minimal aesthetic, smooth 60fps animations, zero-dependency vanilla JS, and sub-second load times.
+                Mindfulness web app featuring guided breathing exercise intervals, a body mass index (BMI) health calculator, and mood insight tracking.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">Modular CSS</span>
-                <span class="tech-tag">Vanilla JS</span>
-                <span class="tech-tag">IntersectionObserver</span>
-                <span class="tech-tag">SEO &amp; CWV</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">PWA</span>
+                <span class="tech-tag">Firebase</span>
               </div>
               <div class="project-actions">
-                <a href="/projects/trinity-palace/" class="project-link-cta">
-                  <span>Read Full Case Study</span>
+                <a href="/projects/serenity-breathing/" class="project-link-cta">
+                  <span>Read Case Study</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
+                <a href="https://github.com/ha-re-ram/Serenity-Breathing" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: BajarNepal -->
-          <article class="project-card spotlight-card" data-category="backend fullstack">
+          <!-- 2. NexisERP -->
+          <article class="project-card spotlight-card" data-category="fullstack">
             <div class="project-thumbnail">
-              <img src="/assets/projects/bajarnepal.webp" alt="BajarNepal UML system architecture and entity models preview" width="600" height="375" loading="lazy">
+              <img src="/assets/projects/nexiserp.webp" alt="NexisERP platform preview" width="600" height="375" loading="lazy">
             </div>
             <div class="project-content">
-              <span class="project-category">Systems Architecture &bull; Collaborative</span>
+              <span class="project-category">Full-Stack &bull; SaaS ERP</span>
               <h2 class="project-title">
-                <a href="/projects/bajarnepal/">BajarNepal Platform</a>
+                <a href="/projects/nexiserp/">NexisERP (erp_saas)</a>
               </h2>
               <p class="project-excerpt">
-                Group software engineering project modeling a nationwide multi-vendor marketplace. Authored comprehensive UML class diagrams in draw.io, formalizing entity relationships, role-based access control, and transaction boundaries.
+                Multi-tenant ERP and e-commerce SaaS platform integrating multi-tenant business data, inventory management, and dashboard analytics with Chart.js.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">System Design</span>
-                <span class="tech-tag">draw.io</span>
-                <span class="tech-tag">UML Modeling</span>
-                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+              <div class="project-actions">
+                <a href="/projects/nexiserp/" class="project-link-cta">
+                  <span>Read Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/ha-re-ram/erp_saas" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Online Voting System -->
+          <article class="project-card spotlight-card" data-category="fullstack">
+            <div class="project-thumbnail">
+              <img src="/assets/projects/online-voting-system.webp" alt="Online Voting System portal preview" width="600" height="375" loading="lazy">
+            </div>
+            <div class="project-content">
+              <span class="project-category">Full-Stack &bull; Security &amp; Auth</span>
+              <h2 class="project-title">
+                <a href="/projects/online-voting-system/">Online Voting System</a>
+              </h2>
+              <p class="project-excerpt">
+                Secure election web application featuring double-vote protection logic, role-based access control, JWT authentication, and aggregated vote tallies.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">SQLite</span>
+              </div>
+              <div class="project-actions">
+                <a href="/projects/online-voting-system/" class="project-link-cta">
+                  <span>Read Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/ha-re-ram/online-voting-system" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. OS-Project -->
+          <article class="project-card spotlight-card" data-category="systems">
+            <div class="project-thumbnail">
+              <img src="/assets/projects/os-project.webp" alt="OS-Project simulator interface preview" width="600" height="375" loading="lazy">
+            </div>
+            <div class="project-content">
+              <span class="project-category">Systems &bull; Algorithms &amp; GUI</span>
+              <h2 class="project-title">
+                <a href="/projects/os-project/">OS-Project (OS-Pro)</a>
+              </h2>
+              <p class="project-excerpt">
+                Educational operating systems simulator visualising virtual memory page replacement (FIFO, LRU, Optimal, MRU) and a block-based file system with Tkinter.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter GUI</span>
+                <span class="tech-tag">Algorithms</span>
+                <span class="tech-tag">File Systems</span>
+              </div>
+              <div class="project-actions">
+                <a href="/projects/os-project/" class="project-link-cta">
+                  <span>Read Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+                <a href="https://github.com/ha-re-ram/OS-Project" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. SkyCast -->
+          <article class="project-card spotlight-card" data-category="frontend">
+            <div class="project-thumbnail">
+              <img src="/assets/projects/skycast.webp" alt="SkyCast weather forecast interface preview" width="600" height="375" loading="lazy">
+            </div>
+            <div class="project-content">
+              <span class="project-category">Frontend &bull; API Integration</span>
+              <h2 class="project-title">
+                <a href="/projects/skycast/">SkyCast Weather</a>
+              </h2>
+              <p class="project-excerpt">
+                Real-time weather forecast web app with 5-day projections and a glassmorphism interface consuming the OpenWeatherMap REST API.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS Glassmorphism</span>
                 <span class="tech-tag">REST API</span>
               </div>
               <div class="project-actions">
-                <a href="/projects/bajarnepal/" class="project-link-cta">
-                  <span>Read Full Case Study</span>
+                <a href="/projects/skycast/" class="project-link-cta">
+                  <span>Read Case Study</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
+                <a href="https://github.com/ha-re-ram/SkyCast" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
               </div>
             </div>
           </article>
 
-          <!-- Project 3: Distributed Task Engine -->
-          <article class="project-card spotlight-card" data-category="backend">
+          <!-- 6. Cara -->
+          <article class="project-card spotlight-card" data-category="frontend">
             <div class="project-thumbnail">
-              <img src="/assets/projects/distributed-task-engine.webp" alt="Distributed Task Engine architecture diagram and queue dashboard preview" width="600" height="375" loading="lazy">
+              <img src="/assets/projects/cara.webp" alt="Cara e-commerce storefront layout preview" width="600" height="375" loading="lazy">
             </div>
             <div class="project-content">
-              <span class="project-category">Distributed Systems &bull; Backend</span>
+              <span class="project-category">Frontend &bull; Web Design</span>
               <h2 class="project-title">
-                <a href="/projects/distributed-task-engine/">Distributed Task Engine</a>
+                <a href="/projects/cara/">Cara E-Commerce</a>
               </h2>
               <p class="project-excerpt">
-                Asynchronous job orchestrator and worker pool using Redis streams, rate limiting, automatic backoff retries, and live job state telemetries over WebSockets.
+                Responsive multi-page e-commerce storefront focused on semantic layout structures, product showcase grids, and mobile-friendly interactions.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Redis</span>
-                <span class="tech-tag">WebSockets</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Responsive UI</span>
               </div>
               <div class="project-actions">
-                <a href="/projects/distributed-task-engine/" class="project-link-cta">
-                  <span>Read Full Case Study</span>
+                <a href="/projects/cara/" class="project-link-cta">
+                  <span>Read Case Study</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
+                <a href="https://github.com/ha-re-ram/Cara" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
               </div>
             </div>
           </article>
         </div>
 
-        <!-- Open Source Repositories Notice -->
-        <div class="callout-box reveal" style="margin-top: var(--space-12); border-left-color: var(--accent-indigo);">
-          <h4>Open Source Repositories on GitHub</h4>
-          <p style="font-size: var(--text-sm); margin-bottom: var(--space-3); color: var(--text-muted);">
-            In addition to the systems detailed above, you can explore algorithmic implementations, utilities, and academic projects directly on my GitHub repository list.
-          </p>
-          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-            <span>Explore ha-re-ram on GitHub</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-          </a>
+        <!-- Small "Other Work" Section -->
+        <div class="reveal" style="margin-top: var(--space-16);">
+          <div class="section-header">
+            <span class="section-tag">Lab &amp; Experimental Work</span>
+            <h2 class="section-title">Other Coursework &amp; Explorations</h2>
+            <p class="section-subtitle">
+              Supplemental repositories demonstrating lab assignments, object-oriented design experiments, and systems programming exercises.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+            <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-teal);">
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-1);">OOSE-Lab-UML-Diagram</h3>
+              <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-3);">
+                Interactive UML diagram hub using Mermaid.js for structural and behavioral models in Object-Oriented Software Engineering.
+              </p>
+              <a href="https://github.com/ha-re-ram/OOSE-Lab-UML-Diagram" target="_blank" rel="noopener noreferrer" class="inline-link" style="font-size: var(--text-xs);">View Repository &rarr;</a>
+            </div>
+
+            <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-indigo);">
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-1);">Console-project-java</h3>
+              <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-3);">
+                Command-line project built in Java exploring Object-Oriented Programming (OOP), encapsulation, and clean layered design.
+              </p>
+              <a href="https://github.com/ha-re-ram/Console-project-java" target="_blank" rel="noopener noreferrer" class="inline-link" style="font-size: var(--text-xs);">View Repository &rarr;</a>
+            </div>
+
+            <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-pink);">
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-1);">AIML-Lab</h3>
+              <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-3);">
+                Practical laboratory exercises and experiments covering core machine learning algorithms and dataset operations in Python.
+              </p>
+              <a href="https://github.com/ha-re-ram/AIML-Lab" target="_blank" rel="noopener noreferrer" class="inline-link" style="font-size: var(--text-xs);">View Repository &rarr;</a>
+            </div>
+
+            <div class="callout-box" style="margin: 0; background: var(--bg-surface); border-left-color: var(--accent-gold);">
+              <h3 style="font-size: var(--text-base); margin-bottom: var(--space-1);">OS-Lab</h3>
+              <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-3);">
+                Low-level C code exercises exploring POSIX system calls, process creation with fork, and basic IPC mechanisms.
+              </p>
+              <a href="https://github.com/ha-re-ram/OS-Lab" target="_blank" rel="noopener noreferrer" class="inline-link" style="font-size: var(--text-xs);">View Repository &rarr;</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -295,7 +420,7 @@
             <span class="logo-text">Hareram Kushwaha<span class="logo-accent">.</span></span>
           </a>
           <p>
-            Software Engineer &bull; B.Tech Computer Science Engineering (KPRIET). Based in Coimbatore, India; open to relocation and remote engineering teams.
+            Software Engineer &bull; B.Tech Computer Science Engineering student at KPRIET, Coimbatore, India.
           </p>
         </div>
 
@@ -303,35 +428,40 @@
           <div class="footer-col-title">Navigation</div>
           <ul class="footer-links">
             <li><a href="/" class="footer-link">Home</a></li>
-            <li><a href="/about/" class="footer-link">About &amp; Journey</a></li>
-            <li><a href="/projects/" class="footer-link">Engineering Projects</a></li>
-            <li><a href="/skills/" class="footer-link">Technical Skills</a></li>
+            <li><a href="/about/" class="footer-link">About</a></li>
+            <li><a href="/projects/" class="footer-link">Projects</a></li>
+            <li><a href="/skills/" class="footer-link">Skills</a></li>
             <li><a href="/resume/" class="footer-link">Resume &amp; PDF</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-col-title">Connect &amp; Legal</div>
+          <div class="footer-col-title">Connect</div>
           <ul class="footer-links">
             <li><a href="/contact/" class="footer-link">Contact Form</a></li>
             <li><a href="mailto:hareramkushwaha054@gmail.com" class="footer-link">Direct Email</a></li>
-            <li><a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a></li>
-            <li><a href="[ADD: LinkedIn URL - https://linkedin.com/in/...]" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn Profile</a></li>
+            <li><a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+            <li><a href="https://in.linkedin.com/in/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 Hareram Kushwaha. Built for performance, zero layout shift, and WCAG 2.2 AA accessibility.
+          &copy; 2026 Hareram Kushwaha. Clean static portfolio engineered for performance and accessibility.
         </div>
         <div class="footer-social-links">
-          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
           </a>
-          <a href="mailto:hareramkushwaha054@gmail.com" aria-label="Email">
+          <a href="https://in.linkedin.com/in/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:hareramkushwaha054@gmail.com" aria-label="Send Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
               <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,6 +1,6 @@
 /**
  * Hareram Kushwaha Portfolio - Contact Form Handler
- * Validates user input, offers direct mailto fallback, and integrates with form service endpoint placeholder.
+ * Validates input, provides instant feedback, and falls back to a pre-filled mailto action.
  */
 
 (function () {
@@ -25,11 +25,10 @@
 
       if (!name || !email || !message) {
         statusMsg.className = 'form-status error';
-        statusMsg.textContent = 'Please fill out all required fields.';
+        statusMsg.textContent = 'Please fill out all fields.';
         return;
       }
 
-      // Basic email regex
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
         statusMsg.className = 'form-status error';
@@ -37,13 +36,12 @@
         return;
       }
 
-      // Check if endpoint is still placeholder or active
       const endpoint = form.getAttribute('action') || '';
-      const isPlaceholder = !endpoint || endpoint.includes('YOUR_FORM_ENDPOINT');
+      const isPlaceholder = !endpoint || endpoint.includes('PLACEHOLDER') || endpoint.startsWith('[');
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending message...';
+        submitBtn.textContent = 'Processing...';
       }
 
       if (isPlaceholder) {
@@ -54,15 +52,15 @@
           window.location.href = `mailto:hareramkushwaha054@gmail.com?subject=${subject}&body=${body}`;
 
           statusMsg.className = 'form-status success';
-          statusMsg.textContent = 'Opening your email client with your prefilled message. You can also email hareramkushwaha054@gmail.com directly!';
-          
+          statusMsg.textContent = 'Opening your email client to send this message directly to hareramkushwaha054@gmail.com.';
+
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';
           }
-        }, 500);
+        }, 400);
       } else {
-        // Submit via AJAX to real endpoint
+        // Submit via AJAX to configured endpoint
         try {
           const response = await fetch(endpoint, {
             method: 'POST',
@@ -75,14 +73,14 @@
 
           if (response.ok) {
             statusMsg.className = 'form-status success';
-            statusMsg.textContent = 'Thank you! Your message has been sent successfully. I will get back to you shortly.';
+            statusMsg.textContent = 'Thank you! Your message has been sent successfully.';
             form.reset();
           } else {
-            throw new Error('Network response was not ok');
+            throw new Error('Network response error');
           }
         } catch (err) {
           statusMsg.className = 'form-status error';
-          statusMsg.textContent = 'Could not send message automatically. Please reach out directly to hareramkushwaha054@gmail.com.';
+          statusMsg.textContent = 'Unable to send message automatically. Please email hareramkushwaha054@gmail.com directly.';
         } finally {
           if (submitBtn) {
             submitBtn.disabled = false;

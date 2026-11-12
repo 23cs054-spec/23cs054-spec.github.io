@@ -1,10 +1,11 @@
 # Hareram Kushwaha &mdash; Software Engineer Portfolio
 
-Production-grade, multi-page personal portfolio website for **Hareram Kushwaha**, Software Engineer (B.Tech Computer Science Engineering, KPRIET).
+A production-grade, zero-build, multi-page personal portfolio website for **Hareram Kushwaha**, B.Tech Computer Science Engineering student at KPR Institute of Engineering and Technology (KPRIET), Coimbatore.
 
-- **Canonical URL:** [https://hareramkushwaha.com.np](https://hareramkushwaha.com.np)
-- **Deployment Target:** GitHub Pages with custom CNAME domain (zero build step)
-- **Performance:** 95+ across Lighthouse Performance, Accessibility, Best Practices, and SEO
+- **Canonical Domain:** [https://hareramkushwaha.com.np](https://hareramkushwaha.com.np)
+- **Deployment Platform:** GitHub Pages with a custom domain (zero build step)
+- **Design System:** Deep navy palette (#0b1220), subtle teal-to-indigo gradient accents, modular CSS custom properties, and dark/light mode toggle with zero flash on load.
+- **Accessibility & Performance:** WCAG 2.2 AA compliant, `@media (prefers-reduced-motion: reduce)` support, and optimized for sub-second Core Web Vitals.
 
 ---
 
@@ -12,131 +13,161 @@ Production-grade, multi-page personal portfolio website for **Hareram Kushwaha**
 
 ```
 hareram/
-├── CNAME                           # Custom domain configuration (hareramkushwaha.com.np)
-├── robots.txt                      # Crawler directives referencing sitemap.xml
-├── sitemap.xml                     # XML sitemap with all routes, priority, and lastmod
-├── site.webmanifest                # Progressive Web App (PWA) manifest
-├── 404.html                        # Branded 404 page (noindex, follow)
-├── index.html                      # Homepage (Hero, Stats, Featured Work, Principles)
+├── CNAME                                  # Custom apex domain (hareramkushwaha.com.np)
+├── robots.txt                             # Web crawler instructions linking to sitemap.xml
+├── sitemap.xml                            # Complete XML sitemap with all routes and priorities
+├── site.webmanifest                       # Progressive Web App manifest
+├── 404.html                               # Custom branded 404 page (noindex, follow)
+├── index.html                             # Homepage: Hero, values, 3 featured projects, skills preview
 ├── about/
-│   └── index.html                  # About (Bio, Education, Approach, Timeline)
+│   └── index.html                         # About: Background, education at KPRIET, timeline of learning
 ├── projects/
-│   ├── index.html                  # Filterable project catalog (All, Full-Stack, Backend, Web)
-│   ├── trinity-palace/
-│   │   └── index.html              # Case study: Luxury resort marketing platform
-│   ├── bajarnepal/
-│   │   └── index.html              # Case study: E-commerce system architecture & UML
-│   └── distributed-task-engine/
-│       └── index.html              # Case study: Asynchronous Redis queue & worker pool
+│   ├── index.html                         # Filterable project catalog (All, Full-Stack, Frontend, Systems)
+│   ├── serenity-breathing/
+│   │   └── index.html                     # Case study: React/TypeScript mindfulness PWA
+│   ├── nexiserp/
+│   │   └── index.html                     # Case study: PHP/MySQL multi-tenant SaaS ERP
+│   ├── online-voting-system/
+│   │   └── index.html                     # Case study: React, Vite, Node, Express, SQLite voting app
+│   ├── os-project/
+│   │   └── index.html                     # Case study: Python Tkinter OS virtual memory simulator
+│   ├── skycast/
+│   │   └── index.html                     # Case study: Vanilla JS weather forecast app (OpenWeatherMap)
+│   └── cara/
+│       └── index.html                     # Case study: Responsive multi-page e-commerce storefront
 ├── skills/
-│   └── index.html                  # Skills taxonomy with honest competency levels
+│   └── index.html                         # Categorized skills taxonomy (no percentage bars)
 ├── resume/
-│   └── index.html                  # Semantic web resume & PDF download
+│   └── index.html                         # Semantic web resume with PDF download button
 ├── contact/
-│   └── index.html                  # Contact channels, form with mailto fallback
+│   └── index.html                         # Contact channels, form with mailto fallback
 ├── css/
-│   ├── variables.css               # Design tokens, theme variables (dark/light), typography
-│   ├── base.css                    # Modern CSS reset, body styles, technical grid background
-│   ├── layout.css                  # Header, navigation, drawer, breadcrumbs, footer
-│   ├── components.css              # Buttons, spotlight cards, magnetic chips, forms
-│   └── animations.css              # Keyframes, reveals, reduced-motion overrides
+│   ├── variables.css                      # Design tokens, theme variables (dark/light), typography
+│   ├── base.css                           # Modern CSS reset, body styles, technical grid background
+│   ├── layout.css                         # Header, navigation, drawer, breadcrumbs, footer
+│   ├── components.css                     # Buttons, spotlight cards, magnetic chips, forms
+│   └── animations.css                     # Keyframes, reveals, reduced-motion overrides
 ├── js/
-│   ├── theme.js                    # Dark/light theme engine with localStorage & system sync
-│   ├── navigation.js               # Mobile drawer, focus trapping, sticky header blur
-│   ├── animations.js               # IntersectionObserver scroll reveals, stat counters, spotlight
-│   ├── typewriter.js               # Hero typewriter cycling focus phrases
-│   ├── project-filter.js           # Interactive tag filter for /projects/ catalog
-│   └── contact.js                  # Form validation, status messaging, mailto fallback
+│   ├── theme.js                           # Dark/light theme engine with localStorage & system sync
+│   ├── navigation.js                      # Mobile drawer, focus trapping, sticky header blur
+│   ├── animations.js                      # IntersectionObserver scroll reveals, stat counters, spotlight
+│   ├── typewriter.js                      # Hero typewriter cycling focus phrases
+│   ├── project-filter.js                  # Interactive tag filter for /projects/ catalog
+│   └── contact.js                         # Form validation, status messaging, mailto fallback
 ├── assets/
-│   ├── favicon.svg                 # Scalable vector favicon
-│   ├── apple-touch-icon.png        # 180x180 iOS touch icon
-│   ├── icon-192.png                # 192x192 PWA icon
-│   ├── icon-512.png                # 512x512 PWA icon
-│   ├── og-image.png                # 1200x630 Open Graph & Twitter share preview
-│   ├── resume.pdf                  # Formatted PDF resume download
+│   ├── favicon.svg                        # Scalable vector favicon
+│   ├── apple-touch-icon.png               # 180x180 iOS touch icon
+│   ├── icon-192.png                       # 192x192 PWA icon
+│   ├── icon-512.png                       # 512x512 PWA icon
+│   ├── og-image.png                       # 1200x630 Open Graph & Twitter share preview
+│   ├── resume.pdf                         # Formatted PDF resume download
 │   └── projects/
-│       ├── trinity-palace.webp     # Preview mockup for Trinity Palace case study
-│       ├── bajarnepal.webp         # Architecture diagram preview for BajarNepal
-│       └── distributed-task-engine.webp # Queue diagram preview for Distributed Task Engine
-└── README.md                       # Documentation, deployment guide, and QA checklist
+│       ├── serenity-breathing.webp        # Preview mockup for Serenity Breathing
+│       ├── nexiserp.webp                  # Preview mockup for NexisERP
+│       ├── online-voting-system.webp      # Preview mockup for Online Voting System
+│       ├── os-project.webp                # Preview mockup for OS-Project
+│       ├── skycast.webp                   # Preview mockup for SkyCast
+│       └── cara.webp                      # Preview mockup for Cara
+└── README.md                              # Documentation, deployment guide, and QA checklist
 ```
 
 ---
 
-## 2. GitHub Pages Deployment Steps
+## 2. Local Preview
 
-Because this is a zero-build static site, deployment to GitHub Pages takes less than two minutes:
+Because this is a pure static website with no build dependencies, you can preview it immediately using any local HTTP server:
 
-### Step 1: Initialize Git and Commit
 ```bash
-cd /home/ha-re-ram/Projects/hareram
-git init
-git add .
-git commit -m "feat: complete production portfolio for Hareram Kushwaha"
+# Using Python 3 (recommended)
+python3 -m http.server 8080
+
+# Or using Node.js npx serve
+npx serve .
 ```
 
-### Step 2: Push to GitHub
-Create a repository on GitHub (e.g. `ha-re-ram/portfolio` or `ha-re-ram/ha-re-ram.github.io`):
+Open `http://localhost:8080` in your web browser.
+
+---
+
+## 3. GitHub Pages Deployment with Custom Domain
+
+### Step 1: Commit and Push
 ```bash
-git remote add origin https://github.com/ha-re-ram/portfolio.git
+git add .
+git commit -m "feat: complete production portfolio for Hareram Kushwaha"
 git branch -M main
+git remote add origin https://github.com/ha-re-ram/ha-re-ram.github.io.git  # or your repo
 git push -u origin main
 ```
 
-### Step 3: Enable GitHub Pages & Custom Domain
-1. In your GitHub repository, navigate to **Settings** &rarr; **Pages**.
-2. Under **Build and deployment**, select:
+### Step 2: Configure GitHub Pages
+1. Go to your repository on GitHub: **Settings** &rarr; **Pages**.
+2. Under **Build and deployment**:
    - **Source:** Deploy from a branch
    - **Branch:** `main` / `/ (root)`
    - Click **Save**.
-3. Under **Custom domain**, enter: `hareramkushwaha.com.np`.
-4. Ensure the **Enforce HTTPS** box is checked (allow a few minutes for certificate issuance).
-5. At your DNS provider for `hareramkushwaha.com.np`, configure:
-   - `CNAME` record pointing to `ha-re-ram.github.io` (or GitHub Pages A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`).
+3. Under **Custom domain**, enter `hareramkushwaha.com.np`.
+4. Ensure **Enforce HTTPS** is checked.
+
+### Step 3: DNS Records (Domain Registrar)
+Ensure the following DNS records are set at your registrar for `hareramkushwaha.com.np`:
+- **CNAME:** `@` or `www` pointing to `ha-re-ram.github.io`
+- Or **A Records** pointing to GitHub Pages IP addresses:
+  ```
+  185.199.108.153
+  185.199.109.153
+  185.199.110.153
+  185.199.111.153
+  ```
 
 ---
 
-## 3. How to Update Content
+## 4. How to Update Content
 
-- **Adding a Project:**
-  1. Duplicate `/projects/trinity-palace/` to `/projects/<new-slug>/`.
-  2. Update the `<title>`, `<meta name="description">`, canonical URL, and JSON-LD block.
-  3. Add the project card into `/projects/index.html` and optionally the featured grid on `index.html`.
-  4. Add the new URL into `sitemap.xml`.
+- **Adding / Updating Projects:**
+  1. Add or duplicate a case study directory under `/projects/<slug>/index.html`.
+  2. Add the corresponding card into `/projects/index.html`.
+  3. Update `sitemap.xml` with the new route.
 - **Updating Skills:**
-  1. Open `/skills/index.html` and add/edit the `<div class="skill-chip">` items.
+  1. Edit `<div class="skill-chip">` entries in `/skills/index.html`.
 - **Replacing Resume PDF:**
-  1. Save your updated resume as `resume.pdf` in the `/assets/` directory.
-- **Configuring Contact Form Backend:**
-  1. Create a free form at [Formspree](https://formspree.io) or [Basin](https://usebasin.com).
-  2. Open `/contact/index.html` and replace `[ADD: Form endpoint...]` in the `<form action="...">` attribute.
+  1. Replace `assets/resume.pdf` with your updated resume export.
+- **Connecting Contact Form Endpoint (Optional):**
+  1. If you wish to use an automated form backend service (such as [Formspree](https://formspree.io), Basin, or Web3Forms), replace `[OPTIONAL_FORM_ENDPOINT_PLACEHOLDER]` in the `action` attribute of `<form>` in `contact/index.html`. Otherwise, the built-in mailto fallback opens your email client directly.
 
 ---
 
-## 4. 15-Minute Post-Build QA Checklist
+## 5. How to Run Lighthouse
 
-| Check # | Item | Verification Method | Expected Result |
+1. Open Google Chrome in an **Incognito Window** (to prevent extensions from interfering with metrics).
+2. Open Chrome DevTools (`F12` or `Ctrl+Shift+I`) and navigate to the **Lighthouse** tab.
+3. Select **Mode:** Navigation, **Device:** Mobile, and check all categories (Performance, Accessibility, Best Practices, SEO).
+4. Click **Analyze page load**.
+5. Repeat for desktop to verify both viewports achieve 95+ scores.
+
+---
+
+## 6. 15-Minute QA Checklist for the Owner
+
+| Step | Verification Task | How to Test | Expected Result |
 | :---: | :--- | :--- | :--- |
-| **1** | Local Server Launch | Run `python3 -m http.server 8080` | Site boots without errors at `http://localhost:8080` |
-| **2** | Theme Toggle | Click Sun/Moon button on header | Flips between dark (#0b1220) & light mode; persists on reload |
-| **3** | Reduced Motion | Toggle `prefers-reduced-motion` in DevTools | Animations stop, cards remain immediately visible, typewriter stops |
-| **4** | Mobile Viewport | Inspect at 375px width (iPhone SE) | Zero horizontal overflow; tap targets $\ge$ 44x44px; hamburger functions |
-| **5** | Project Category Filter | Click buttons on `/projects/` | Smoothly isolates Full-Stack / Backend / Web cards |
-| **6** | Stat Counters | Scroll to Stats section on Home | Numbers animate once smoothly from 0 to 4+, 7.9, 15+, 100% |
-| **7** | PDF Download | Click "Download PDF" on `/resume/` | `Hareram_Kushwaha_Resume.pdf` downloads and opens properly |
-| **8** | Contact Submission | Fill name, email, msg and click Send | Launches mailto client fallback or posts to endpoint |
-| **9** | 404 Route | Navigate to `/missing-route/` | Custom branded 404 renders with navigation back to Home |
-| **10** | SEO & Schema | Inspect JSON-LD via Google Rich Results | Valid `Person`, `WebSite`, `CreativeWork`, and `BreadcrumbList` |
+| **1** | Local Boot | Run `python3 -m http.server 8080` | Site loads smoothly at `http://localhost:8080` without console errors |
+| **2** | Theme Switcher | Click the Sun/Moon icon in header | Page toggles between dark (#0b1220) and light (#f8fafc) mode; persists across page reloads |
+| **3** | Reduced Motion | Enable `prefers-reduced-motion: reduce` in DevTools | Animations stop, cards remain immediately visible, typewriter remains stationary |
+| **4** | Mobile Viewport | Inspect at 375px width (iPhone SE) | Zero horizontal overflow; touch targets $\ge$ 44px; hamburger navigation opens and traps focus |
+| **5** | Project Filtering | Click categories on `/projects/` | Filter buttons smoothly isolate Full-Stack, Frontend, and Systems cards |
+| **6** | Case Study Navigation | Click through each of the 6 projects | Problem, stack, features, decisions, and GitHub links display accurately |
+| **7** | Resume Download | Click "Download Resume PDF" on `/resume/` | `Hareram_Kushwaha_Resume.pdf` downloads and opens properly |
+| **8** | Contact Action | Submit form on `/contact/` | Triggers pre-filled email client fallback with recipient set to `hareramkushwaha054@gmail.com` |
+| **9** | 404 Route | Navigate to `/non-existent-page/` | Branded 404 page renders with working recovery buttons to Home and Projects |
+| **10** | SEO & Structured Data | Paste URL/HTML into [Google Rich Results Test](https://search.google.com/test/rich-results) | Valid `Person`, `WebSite`, `SoftwareSourceCode`, and `BreadcrumbList` schemas |
 
 ---
 
-## 5. Items to Personalize / Supply
+## 7. Items the Owner Must Verify / Supply Before Final Publishing
 
-Search for `[ADD` across the workspace to replace placeholders with your exact details:
-
-1. **Graduation Date:** Replace `[ADD: Graduation Month Year - e.g., June 2025]` across `index.html`, `about/index.html`, and `resume/index.html`.
-2. **LinkedIn URL:** Replace `[ADD: LinkedIn URL - https://linkedin.com/in/...]` in all page footers, structured data, and the contact page.
-3. **BajarNepal Contribution:** Replace `[ADD: Specific module contribution...]` in `projects/bajarnepal/index.html` with your exact deliverables.
-4. **Third Project Repository:** If you have an active GitHub repo for project 3, replace `[ADD: GitHub repo link...]` in `projects/distributed-task-engine/index.html`.
-5. **Contact Form Endpoint:** Replace `[ADD: Form endpoint...]` in `contact/index.html` if you wish to use Formspree or Basin instead of the mailto fallback.
-6. **Metrics:** Replace `[ADD metric]` placeholders with exact percentages or client metrics as they become available.
+1. **[CONFIRM] Online Voting System Stack:** Verify that your repository `github.com/ha-re-ram/online-voting-system` is using the React + Vite frontend and Node.js + Express + SQLite backend. (The case study accurately reflects this architecture).
+2. **Project Screenshots:** Replace placeholder WebP files in `assets/projects/` (`serenity-breathing.webp`, `nexiserp.webp`, `online-voting-system.webp`, `os-project.webp`, `skycast.webp`, `cara.webp`) with actual UI screenshots of your applications.
+3. **Resume PDF:** Place your formal, customized resume PDF at `assets/resume.pdf`.
+4. **Social Sharing Preview:** Update `assets/og-image.png` (1200×630px) with your preferred personal or banner photo for social media links.
+5. **Favicon Assets:** Update `assets/favicon.svg` and `assets/apple-touch-icon.png` if you have a custom personal logo.

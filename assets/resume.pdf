@@ -15,49 +15,55 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 6 0 obj
-<< /Length 720 >>
+<< /Length 850 >>
 stream
 BT
-/F1 22 Tf
-50 720 Td
+/F1 20 Tf
+50 730 Td
 (HARERAM KUSHWAHA) Tj
-/F2 11 Tf
-0 -20 Td
-(Software Engineer | Computer Science Engineering Graduate) Tj
-0 -16 Td
+/F2 10 Tf
+0 -18 Td
+(Software Engineer | B.Tech Computer Science Engineering Student) Tj
+0 -14 Td
 (Email: hareramkushwaha054@gmail.com | Portfolio: https://hareramkushwaha.com.np) Tj
-0 -16 Td
-(GitHub: https://github.com/ha-re-ram | Location: Coimbatore, India) Tj
-/F1 14 Tf
-0 -36 Td
+0 -14 Td
+(GitHub: https://github.com/ha-re-ram | LinkedIn: https://in.linkedin.com/in/ha-re-ram) Tj
+/F1 13 Tf
+0 -30 Td
 (EDUCATION) Tj
-/F2 11 Tf
-0 -18 Td
-(B.Tech in Computer Science Engineering - CGPA 7.9) Tj
-0 -14 Td
-(KPR Institute of Engineering and Technology (KPRIET), Coimbatore, India) Tj
-/F1 14 Tf
-0 -32 Td
+/F2 10 Tf
+0 -16 Td
+(B.Tech in Computer Science and Engineering - CGPA: 7.9 / 10.0) Tj
+0 -13 Td
+(KPR Institute of Engineering and Technology, Coimbatore, India | Sept 2023 - Expected 2027) Tj
+/F1 13 Tf
+0 -26 Td
 (TECHNICAL SKILLS) Tj
-/F2 11 Tf
-0 -18 Td
-(Languages: JavaScript, TypeScript, Python, C++, Java, SQL) Tj
-0 -14 Td
-(Backend & Systems: Node.js, Express, REST APIs, System Design, Microservices) Tj
-0 -14 Td
-(Frontend: HTML5, CSS3, Modern JavaScript (ES6+), React, Responsive Design) Tj
-0 -14 Td
-(Databases & Tools: PostgreSQL, MongoDB, Redis, Git, GitHub, Docker, Linux) Tj
-/F1 14 Tf
-0 -32 Td
-(KEY PROJECTS) Tj
-/F2 11 Tf
-0 -18 Td
-(1. Trinity Palace Luxury Resort Website - High performance marketing portal) Tj
-0 -14 Td
-(2. BajarNepal - Distributed e-commerce architectural design & UML modeling) Tj
-0 -14 Td
-(3. Distributed Task Engine - Asynchronous worker queue with Redis & WebSockets) Tj
+/F2 10 Tf
+0 -16 Td
+(Languages: JavaScript, TypeScript, Python, PHP, C, C++, Java, SQL, HTML5, CSS3, Bash) Tj
+0 -13 Td
+(Frontend: React, Vite, PWA, Responsive Design, Bootstrap, CSS Flexbox & Grid) Tj
+0 -13 Td
+(Backend & Databases: Node.js, Express, RESTful APIs, JWT Auth, MySQL, SQLite, Firebase) Tj
+0 -13 Td
+(Tools: Git, GitHub, Linux/CLI, VS Code, Tkinter GUI, Chart.js, Mermaid.js) Tj
+/F1 13 Tf
+0 -26 Td
+(FEATURED PROJECTS) Tj
+/F2 10 Tf
+0 -16 Td
+(1. Serenity Breathing - Mindfulness PWA with breathing cycles & BMI tracker [React, TS, Firebase]) Tj
+0 -13 Td
+(2. NexisERP - Multi-tenant ERP & SaaS platform with Chart.js analytics [PHP, MySQL, Bootstrap]) Tj
+0 -13 Td
+(3. Online Voting System - Secure web voting with double-vote prevention & JWT [React, Node, SQLite]) Tj
+0 -13 Td
+(4. OS-Project - Operating systems virtual memory & block file system simulator [Python, Tkinter]) Tj
+0 -13 Td
+(5. SkyCast - Real-time weather forecasting web app with glassmorphism UI [JavaScript, REST API]) Tj
+0 -13 Td
+(6. Cara - Responsive multi-page e-commerce storefront [HTML5, CSS3, JavaScript]) Tj
 ET
 endstream
 endobj
@@ -73,5 +79,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1170
+1300
 %%EOF

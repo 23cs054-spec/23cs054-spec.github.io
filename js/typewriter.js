@@ -1,6 +1,6 @@
 /**
  * Hareram Kushwaha Portfolio - Typewriter Effect
- * Cycles through targeted engineering focus phrases, strictly respecting reduced motion.
+ * Cycles through focused engineering phrases, strictly respecting prefers-reduced-motion.
  */
 
 (function () {
@@ -9,10 +9,10 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const PHRASES = [
-    'reliable backend systems & APIs.',
-    'high-performance web applications.',
-    'distributed architecture & clean code.',
-    'scalable full-stack solutions.'
+    'full-stack web applications.',
+    'clean REST APIs.',
+    'responsive interfaces.',
+    'systems & algorithms.'
   ];
 
   function initTypewriter() {
@@ -27,9 +27,9 @@
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typeSpeed = 75;
+    const typeSpeed = 70;
     const deleteSpeed = 35;
-    const pauseEnd = 2200;
+    const pauseEnd = 2000;
     const pauseStart = 400;
 
     function tick() {
