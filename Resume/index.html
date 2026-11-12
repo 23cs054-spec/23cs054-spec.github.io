@@ -197,26 +197,96 @@
     </div>
 
     <script>
-        document.getElementById('download-btn').addEventListener('click', function () {
-            const element = document.querySelector('.resume-container');
-            const opt = {
-                margin: 0,
-                filename: 'Hareram_Kushwaha_Resume.pdf',
-                image: { type: 'jpeg', quality: 1 },
-                html2canvas: {
-                    scale: 3,
-                    useCORS: true,
-                    letterRendering: true,
-                    logging: false,
-                    scrollX: 0,
-                    scrollY: 0
-                },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', enableLinks: true },
-                pagebreak: { mode: ['avoid-all'] }
-            };
+        (function() {
+            const EXPORT_STATES = Object.freeze({
+                IDLE: 'idle',
+                GENERATING: 'generating',
+                DOWNLOADED: 'downloaded',
+                ERROR: 'error'
+            });
 
-            html2pdf().set(opt).from(element).save();
-        });
+            const btn = document.getElementById('download-btn');
+            if (!btn) return;
+
+            let currentState = EXPORT_STATES.IDLE;
+            btn.dataset.state = EXPORT_STATES.IDLE;
+
+            const originalHTML = btn.innerHTML;
+
+            async function generatePdf() {
+                if (currentState === EXPORT_STATES.GENERATING) return;
+
+                currentState = EXPORT_STATES.GENERATING;
+                btn.dataset.state = EXPORT_STATES.GENERATING;
+                btn.disabled = true;
+                btn.setAttribute('aria-busy', 'true');
+                btn.innerHTML = `
+                    <svg class="download-icon" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8z" fill="currentColor"/>
+                    </svg>
+                    Generating PDF...
+                `;
+
+                const element = document.querySelector('.resume-container');
+                const opt = {
+                    margin: 0,
+                    filename: 'Hareram_Kushwaha_Resume.pdf',
+                    image: { type: 'jpeg', quality: 1 },
+                    html2canvas: {
+                        scale: 3,
+                        useCORS: true,
+                        letterRendering: true,
+                        logging: false,
+                        scrollX: 0,
+                        scrollY: 0
+                    },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', enableLinks: true },
+                    pagebreak: { mode: ['avoid-all'] }
+                };
+
+                try {
+                    await html2pdf().set(opt).from(element).save();
+                    currentState = EXPORT_STATES.DOWNLOADED;
+                    btn.dataset.state = EXPORT_STATES.DOWNLOADED;
+                    btn.innerHTML = `
+                        <svg class="download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Downloaded!
+                    `;
+
+                    setTimeout(() => {
+                        currentState = EXPORT_STATES.IDLE;
+                        btn.dataset.state = EXPORT_STATES.IDLE;
+                        btn.disabled = false;
+                        btn.removeAttribute('aria-busy');
+                        btn.innerHTML = originalHTML;
+                    }, 2200);
+                } catch (err) {
+                    console.error('[ResumeExport] Generation error:', err);
+                    currentState = EXPORT_STATES.ERROR;
+                    btn.dataset.state = EXPORT_STATES.ERROR;
+                    btn.disabled = false;
+                    btn.removeAttribute('aria-busy');
+                    btn.innerHTML = `
+                        <svg class="download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2"/>
+                            <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Retry Download
+                    `;
+                }
+            }
+
+            btn.addEventListener('click', generatePdf);
+
+            window.Portfolio = window.Portfolio || {};
+            window.Portfolio.resumePdf = {
+                STATES: EXPORT_STATES,
+                getState: () => currentState,
+                generate: () => generatePdf()
+            };
+        })();
     </script>
 </body>
 
