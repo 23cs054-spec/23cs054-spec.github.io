@@ -145,6 +145,32 @@
     initSpotlightCards();
     initMagneticChips();
     initStatCounters();
+    initHeroTilt();
+  }
+
+  // 5. Interactive 3D Card Tilt on Hero Stage (Mouse only)
+  function initHeroTilt() {
+    if (prefersReducedMotion || !window.matchMedia('(pointer: fine)').matches) return;
+    const stage = document.querySelector('.hero-stage');
+    if (!stage) return;
+
+    stage.addEventListener('mousemove', (e) => {
+      const rect = stage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const rotateX = -(y / (rect.height / 2)) * 5;
+      const rotateY = (x / (rect.width / 2)) * 5;
+      stage.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      stage.style.transition = 'transform 0.5s ease-out';
+      stage.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+
+    stage.addEventListener('mouseenter', () => {
+      stage.style.transition = 'transform 0.1s ease-out';
+    });
   }
 
   if (document.readyState === 'loading') {

@@ -44,7 +44,7 @@
   <script>
     (function () {
       const saved = localStorage.getItem('hk-portfolio-theme');
-      const theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      const theme = saved || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
@@ -175,52 +175,129 @@
   <main id="main-content">
     <!-- Hero Section -->
     <section class="section hero-section" aria-label="Introduction">
-      <div class="container hero-content">
-        <div class="hero-status-pill animate-load">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Open to software engineering internships &amp; full-time roles</span>
-        </div>
-
-        <h1 class="hero-title animate-load animate-delay-1">
-          Hi, I'm <span class="hero-animated-name">Hareram Kushwaha</span>
-        </h1>
-
-        <div class="hero-subtitle animate-load animate-delay-2" aria-live="polite">
-          Software Engineer building <span class="typewriter-wrapper"><span id="typewriter" class="typewriter-text">full-stack web applications.</span><span class="typewriter-cursor" aria-hidden="true">|</span></span>
-        </div>
-
-        <p class="hero-description animate-load animate-delay-3">
-          Computer Science Engineering student at KPR Institute of Engineering and Technology (KPRIET), Coimbatore. I build functional web applications, clean REST APIs, and explore systems programming with a focus on code readability, practical design, and continuous learning.
-        </p>
-
-        <div class="hero-actions animate-load animate-delay-4">
-          <a href="/projects/" class="btn btn-primary">
-            <span>View Projects</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="/resume/" class="btn btn-secondary">
-            <span>View Resume</span>
-          </a>
-          <a href="/contact/" class="btn btn-outline">
-            <span>Contact Me</span>
-          </a>
-        </div>
-
-        <!-- Real Academic & Project Highlights (No Fake Metrics) -->
-        <div class="stats-grid reveal" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-          <div class="stat-card">
-            <div class="stat-number">7.9</div>
-            <div class="stat-label">B.Tech CGPA at KPRIET</div>
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+      <div class="hero-container">
+        <!-- Left Side: Content, Bio, CTA Buttons & Highlights -->
+        <div class="hero-left">
+          <div class="hero-status-pill animate-load">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Open to software engineering internships &amp; full-time roles</span>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">Sept 2023 &ndash; 2027</div>
-            <div class="stat-label">B.Tech Study Timeline</div>
+
+          <h1 class="hero-title animate-load animate-delay-1">
+            Hi, I'm <span class="hero-animated-name">Hareram Kushwaha</span>
+          </h1>
+
+          <div class="hero-subtitle animate-load animate-delay-2" aria-live="polite">
+            Software Engineer building <span class="typewriter-wrapper"><span id="typewriter" class="typewriter-text">full-stack web applications.</span><span class="typewriter-cursor" aria-hidden="true">|</span></span>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Featured Open Repos</div>
+
+          <p class="hero-description animate-load animate-delay-3">
+            Computer Science Engineering student at KPR Institute of Engineering and Technology (KPRIET), Coimbatore. I build functional web applications, clean REST APIs, and explore systems programming with a focus on code readability, practical design, and continuous learning.
+          </p>
+
+          <div class="hero-actions animate-load animate-delay-4">
+            <a href="/projects/" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="/resume/" class="btn btn-secondary">
+              <span>View Resume</span>
+            </a>
+            <a href="/contact/" class="btn btn-outline">
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Academic & Repository Highlights -->
+          <div class="hero-stats animate-load animate-delay-4">
+            <div class="stat-card">
+              <div class="stat-number" data-target="7.9">7.9</div>
+              <div class="stat-label">B.Tech CGPA at KPRIET</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">Sept 2023 &ndash; 2027</div>
+              <div class="stat-label">B.Tech Study Timeline</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="6">6</div>
+              <div class="stat-label">Featured Open Repos</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Interactive Developer Showcase & Profile Stage -->
+        <div class="hero-right animate-load animate-delay-2" aria-label="Hareram Kushwaha Developer Profile Overview">
+          <div class="hero-stage">
+            <!-- Profile Overview Header Card -->
+            <div class="hero-profile-card">
+              <div class="profile-avatar-wrap">
+                <picture>
+                  <source srcset="/assets/profile.webp" type="image/webp">
+                  <img src="/assets/profile.png" alt="Hareram Kushwaha - Software Engineer" class="profile-avatar" width="460" height="460" loading="eager">
+                </picture>
+                <span class="profile-online-indicator" title="Active &amp; Ready to Build" aria-label="Status: Active"></span>
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">Hareram Kushwaha</div>
+                <div class="profile-subtitle">B.Tech CSE &bull; KPRIET, Coimbatore</div>
+                <div class="profile-badge-row">
+                  <span class="profile-mini-pill">Remote / Relocation</span>
+                  <span class="profile-mini-pill origin-pill">Origin: Nepal</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Code / System Terminal Card -->
+            <div class="hero-terminal-card" tabindex="0" role="region" aria-label="Developer Specifications Terminal">
+              <div class="terminal-header">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-tab">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  <span>hareram.config.json</span>
+                </div>
+                <span class="terminal-tag">ACTIVE</span>
+              </div>
+              <div class="terminal-body font-mono">
+                <pre><code><span class="tok-punct">{</span>
+  <span class="tok-key">"name"</span>: <span class="tok-str">"Hareram Kushwaha"</span>,
+  <span class="tok-key">"role"</span>: <span class="tok-str">"Software Engineer"</span>,
+  <span class="tok-key">"education"</span>: <span class="tok-str">"B.Tech CSE @ KPRIET (7.9 CGPA)"</span>,
+  <span class="tok-key">"internship"</span>: <span class="tok-str">"Web Dev @ Oasis Infobyte"</span>,
+  <span class="tok-key">"languages"</span>: [<span class="tok-str">"Java"</span>, <span class="tok-str">"Python"</span>, <span class="tok-str">"JavaScript"</span>, <span class="tok-str">"C"</span>, <span class="tok-str">"SQL"</span>],
+  <span class="tok-key">"stack"</span>: [<span class="tok-str">"React"</span>, <span class="tok-str">"Node.js"</span>, <span class="tok-str">"Express"</span>, <span class="tok-str">"MySQL"</span>, <span class="tok-str">"Git"</span>],
+  <span class="tok-key">"open_to"</span>: [<span class="tok-str">"Full-Time"</span>, <span class="tok-str">"Internships"</span>],
+  <span class="tok-key">"status"</span>: <span class="tok-bool">true</span>
+<span class="tok-punct">}</span></code></pre>
+              </div>
+            </div>
+
+            <!-- Floating Tech Badges (Desktop Absolute Float / Mobile Flex Wrap) -->
+            <div class="hero-floating-badges">
+              <div class="floating-badge badge-top-right">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-text">Full-Stack &amp; REST APIs</span>
+              </div>
+
+              <div class="floating-badge badge-bottom-left">
+                <span class="badge-icon">☕</span>
+                <span class="badge-text">Java &bull; Python &bull; Systems</span>
+              </div>
+
+              <div class="floating-badge badge-bottom-right">
+                <span class="badge-icon">🛡️</span>
+                <span class="badge-text">Secure Auth &amp; DBMS</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

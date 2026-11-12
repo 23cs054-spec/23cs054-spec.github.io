@@ -56,6 +56,36 @@
   }
 }
 
+/* Floating Animations for Hero Visual Stage */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatGentleAlt {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulseGlowSlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
 /* Hero Animated Name */
 .hero-animated-name {
   background: linear-gradient(90deg, #14b8a6, #6366f1, #ec4899, #14b8a6);
@@ -69,24 +99,23 @@
 
 /* Staggered Load Animation */
 .animate-load {
-  opacity: 0;
-  animation: fadeRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeRise 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-delay-1 {
-  animation-delay: 100ms;
+  animation-delay: 60ms;
 }
 
 .animate-delay-2 {
-  animation-delay: 200ms;
+  animation-delay: 120ms;
 }
 
 .animate-delay-3 {
-  animation-delay: 300ms;
+  animation-delay: 180ms;
 }
 
 .animate-delay-4 {
-  animation-delay: 400ms;
+  animation-delay: 240ms;
 }
 
 /* IntersectionObserver Scroll Reveal Classes */

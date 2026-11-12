@@ -13,10 +13,7 @@
     if (savedTheme === 'light' || savedTheme === 'dark') {
       return savedTheme;
     }
-    // Default to dark as specified in prompt, but respect explicit light preference if set
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      return 'light';
-    }
+    // Default to dark as specified
     return 'dark';
   }
 
