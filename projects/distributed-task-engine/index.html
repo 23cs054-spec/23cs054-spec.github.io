@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Engine Case Study | Hareram Kushwaha, SWE</title>
+  <meta name="description" content="Engineering case study for Distributed Task Engine: an asynchronous job queue and worker pool built with Node.js, Redis Streams, and WebSockets.">
+  <link rel="canonical" href="https://hareramkushwaha.com.np/projects/distributed-task-engine/">
+  <meta name="theme-color" content="#0b1220">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Distributed Task Engine Case Study | Hareram Kushwaha">
+  <meta property="og:description" content="Engineering breakdown of an asynchronous job orchestrator and worker pool using Node.js and Redis.">
+  <meta property="og:url" content="https://hareramkushwaha.com.np/projects/distributed-task-engine/">
+  <meta property="og:image" content="https://hareramkushwaha.com.np/assets/projects/distributed-task-engine.webp">
+  <meta property="og:site_name" content="Hareram Kushwaha">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Distributed Task Engine Case Study | Hareram Kushwaha">
+  <meta name="twitter:description" content="Engineering breakdown of an asynchronous job orchestrator and worker pool using Node.js and Redis.">
+  <meta name="twitter:image" content="https://hareramkushwaha.com.np/assets/projects/distributed-task-engine.webp">
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts Preconnect & Display Swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+
+  <!-- Theme Script (Inline to prevent FOUC) -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('hk-portfolio-theme');
+      const theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGZW5VR7ZD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HGZW5VR7ZD');
+  </script>
+
+  <!-- Structured Data: BreadcrumbList & SoftwareSourceCode -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hareramkushwaha.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://hareramkushwaha.com.np/projects/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Distributed Task Engine",
+            "item": "https://hareramkushwaha.com.np/projects/distributed-task-engine/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://hareramkushwaha.com.np/projects/distributed-task-engine/#code",
+        "name": "Distributed Task Engine",
+        "headline": "High-Throughput Asynchronous Task Queue & Worker Pool",
+        "description": "Distributed asynchronous task scheduling system with Redis Streams, exponential backoff, worker concurrency pools, and WebSocket telemetry.",
+        "author": {
+          "@type": "Person",
+          "name": "Hareram Kushwaha",
+          "url": "https://hareramkushwaha.com.np/"
+        },
+        "codeRepository": "https://github.com/ha-re-ram",
+        "programmingLanguage": "TypeScript / Node.js",
+        "dateCreated": "2024",
+        "keywords": ["Distributed Systems", "Redis Streams", "Node.js", "WebSockets", "Concurrency", "Message Queue"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="site-logo" aria-label="Hareram Kushwaha Homepage">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#111a2e"/>
+          <path d="M18 20V44M18 32H28M28 20V44" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+          <path d="M36 20V44M46 20L36.5 32L46 44" stroke="#14b8a6" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Hareram<span class="logo-accent">.</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary site navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/projects/" class="nav-link active" aria-current="page">Projects</a>
+        <a href="/skills/" class="nav-link">Skills</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme mode">
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/about/" class="mobile-nav-link">About</a>
+      <a href="/projects/" class="mobile-nav-link active">Projects</a>
+      <a href="/skills/" class="mobile-nav-link">Skills</a>
+      <a href="/contact/" class="mobile-nav-link">Contact</a>
+      <a href="/resume/" class="mobile-nav-link" style="color: var(--accent-teal);">Resume (PDF)</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="container breadcrumbs">
+      <nav aria-label="Breadcrumbs">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item"><a href="/">Home</a></li>
+          <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+          <li class="breadcrumbs-item"><a href="/projects/">Projects</a></li>
+          <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+          <li class="breadcrumbs-item" aria-current="page">Distributed Task Engine</li>
+        </ol>
+      </nav>
+    </div>
+
+    <article class="container">
+      <header class="case-study-hero reveal">
+        <span class="section-tag">Case Study</span>
+        <h1 class="hero-title" style="margin-top: var(--space-2);">Distributed Task Engine</h1>
+        <p class="section-subtitle">
+          An asynchronous background job orchestrator featuring Redis Streams, worker pool auto-recovery, and real-time WebSocket state streaming.
+        </p>
+
+        <!-- Metadata Grid -->
+        <div class="case-study-meta-grid">
+          <div>
+            <div class="meta-item-label">Author &amp; Architect</div>
+            <div class="meta-item-value">Hareram Kushwaha</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Stack</div>
+            <div class="meta-item-value">Node.js, Redis, WebSockets, Docker</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Code Repository</div>
+            <div class="meta-item-value"><a href="[ADD: GitHub repo link - https://github.com/ha-re-ram/...]" target="_blank" rel="noopener noreferrer" class="inline-link">[ADD: GitHub Link]</a></div>
+          </div>
+          <div>
+            <div class="meta-item-label">Status</div>
+            <div class="meta-item-value">Open Source &bull; Tested</div>
+          </div>
+        </div>
+
+        <!-- Project Hero Image -->
+        <div class="case-study-image-wrapper">
+          <img src="/assets/projects/distributed-task-engine.webp" alt="Distributed Task Engine asynchronous queue dashboard and worker pool diagram preview" width="1200" height="750" fetchpriority="high">
+        </div>
+      </header>
+
+      <!-- Problem Statement -->
+      <section class="case-study-section reveal">
+        <h2>The Problem</h2>
+        <p>
+          Synchronous HTTP request-response loops collapse under CPU-heavy or I/O-intensive workloads (such as image transformation, batch PDF report compilation, and mass transactional notifications). When web servers handle these operations in-band, connection pools starve, latency degrades exponentially, and single-point process crashes lead to cascading data corruption.
+        </p>
+        <p>
+          The goal of this system was to engineer a fault-tolerant, horizontally scalable asynchronous job dispatcher capable of queueing thousands of tasks with consumer group acknowledgment guarantees, automatic zombie worker detection, and live status dissemination.
+        </p>
+      </section>
+
+      <!-- Role & Execution -->
+      <section class="case-study-section reveal">
+        <h2>My Role &amp; Implementation</h2>
+        <p>
+          I designed and built the complete system from scratch using TypeScript and Node.js:
+        </p>
+        <ul style="list-style: disc; margin-left: var(--space-6); margin-bottom: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2);">
+          <li>Engineered producer and consumer worker processes decoupled by an in-memory Redis message broker with persistence enabled via Append-Only File (AOF).</li>
+          <li>Implemented Redis Stream Consumer Groups (<code>XREADGROUP</code>, <code>XACK</code>, <code>XPENDING</code>, <code>XCLAIM</code>) to ensure at-least-once message delivery without task loss.</li>
+          <li>Created an automated Dead-Letter Queue (DLQ) with jittered exponential backoff retries for failed tasks.</li>
+          <li>Constructed a lightweight WebSocket telemetry gateway broadcasting queue depth, throughput metrics, and worker node health in real-time.</li>
+          <li>Containerized worker nodes and Redis using Docker Compose for isolated multi-container testing.</li>
+        </ul>
+      </section>
+
+      <!-- Architecture Decisions -->
+      <section class="case-study-section reveal">
+        <h2>System Architecture &amp; Technical Decisions</h2>
+        
+        <div class="callout-box" style="border-left-color: var(--accent-indigo);">
+          <h4>1. Redis Streams vs. Simple Redis Lists or Pub/Sub</h4>
+          <p style="font-size: var(--text-sm); margin-bottom: 0;">
+            Redis Pub/Sub offers fire-and-forget delivery without message durability or persistence. Simple <code>LPUSH/RPOP</code> lists lack consumer group offsets and failure acknowledgment mechanisms. Redis Streams provided the ideal trade-off: sub-millisecond memory speed combined with durable consumer group states and explicit <code>XACK</code> processing.
+          </p>
+        </div>
+
+        <div class="callout-box" style="border-left-color: var(--accent-teal);">
+          <h4>2. Zombie Worker Auto-Recovery via XCLAIM &amp; Heartbeats</h4>
+          <p style="font-size: var(--text-sm); margin-bottom: 0;">
+            If a worker process terminates mid-execution (e.g. out-of-memory exception or network partition), the assigned task remains in the Pending Entries List (PEL). A supervisor thread polls <code>XPENDING</code> at regular intervals; any task idling past a configurable threshold (e.g., 30 seconds) is automatically claimed (<code>XCLAIM</code>) by an active worker node.
+          </p>
+        </div>
+
+        <div class="callout-box" style="border-left-color: var(--accent-pink);">
+          <h4>3. Non-Blocking Event Loops with Worker Threads</h4>
+          <p style="font-size: var(--text-sm); margin-bottom: 0;">
+            CPU-intensive tasks (cryptographic hashing, compression) were offloaded to Node.js <code>worker_threads</code>, keeping the primary event loop completely responsive to new incoming HTTP enqueue requests.
+          </p>
+        </div>
+      </section>
+
+      <!-- Challenges & Solutions -->
+      <section class="case-study-section reveal">
+        <h2>Challenges &amp; Engineering Solutions</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-6); margin-top: var(--space-4);">
+          <div>
+            <h3 style="font-size: var(--text-lg); color: var(--text-primary); margin-bottom: var(--space-1);">Challenge: Thundering Herd on Redis Stream Polling</h3>
+            <p>
+              When multiple worker consumers called blocking reads simultaneously with low timeouts, CPU spikes occurred on the Redis instance whenever new messages arrived in bursts.
+            </p>
+            <p>
+              <strong>Solution:</strong> Configured blocking stream reads (<code>XREADGROUP BLOCK 2000</code>) with consumer-level random backoff delays, smoothing out the request distribution and cutting broker CPU utilization drastically.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: var(--text-lg); color: var(--text-primary); margin-bottom: var(--space-1);">Challenge: Graceful Shutdown under SIGINT / SIGTERM</h3>
+            <p>
+              Abrupt container shutdowns previously interrupted active jobs mid-write, creating orphaned states in downstream storage.
+            </p>
+            <p>
+              <strong>Solution:</strong> Implemented a POSIX signal trap that stops accepting new tasks from Redis, gives active worker threads a 10-second grace window to complete in-flight transactions, and commits the final <code>XACK</code> before closing process sockets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outcome & Performance Metrics -->
+      <section class="case-study-section reveal">
+        <h2>Outcomes &amp; Verified Benchmarks</h2>
+        <p>
+          The distributed engine was benchmarked locally across multi-worker clusters:
+        </p>
+        <div class="stats-grid" style="margin-top: var(--space-6);">
+          <div class="stat-card">
+            <div class="stat-number">2,500+</div>
+            <div class="stat-label">Jobs/Sec Local Throughput</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Task Loss on Worker Crash</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">&lt; 15ms</div>
+            <div class="stat-label">Mean Ingestion Latency</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">[ADD metric]</div>
+            <div class="stat-label">[ADD: Peak Benchmark Target]</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Navigation Footer -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-8) 0; border-top: 1px solid var(--border-subtle); margin-top: var(--space-8);" class="reveal">
+        <a href="/projects/bajarnepal/" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Previous: BajarNepal</span>
+        </a>
+        <a href="/skills/" class="btn btn-primary">
+          <span>Explore Technical Skills Taxonomy</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="site-logo">
+            <span class="logo-text">Hareram Kushwaha<span class="logo-accent">.</span></span>
+          </a>
+          <p>
+            Software Engineer &bull; B.Tech Computer Science Engineering (KPRIET). Based in Coimbatore, India; open to relocation and remote engineering teams.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/about/" class="footer-link">About &amp; Journey</a></li>
+            <li><a href="/projects/" class="footer-link">Engineering Projects</a></li>
+            <li><a href="/skills/" class="footer-link">Technical Skills</a></li>
+            <li><a href="/resume/" class="footer-link">Resume &amp; PDF</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Connect &amp; Legal</div>
+          <ul class="footer-links">
+            <li><a href="/contact/" class="footer-link">Contact Form</a></li>
+            <li><a href="mailto:hareramkushwaha054@gmail.com" class="footer-link">Direct Email</a></li>
+            <li><a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a></li>
+            <li><a href="[ADD: LinkedIn URL - https://linkedin.com/in/...]" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Hareram Kushwaha. Built for performance, zero layout shift, and WCAG 2.2 AA accessibility.
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:hareramkushwaha054@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/navigation.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+</body>
+</html>

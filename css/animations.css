@@ -1,0 +1,177 @@
+/**
+ * Hareram Kushwaha Portfolio - Motion & Animations
+ * Hardware-accelerated (transform & opacity only), strictly respecting prefers-reduced-motion.
+ */
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Hero Animated Name */
+.hero-animated-name {
+  background: linear-gradient(90deg, #14b8a6, #6366f1, #ec4899, #14b8a6);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  display: inline-block;
+}
+
+/* Staggered Load Animation */
+.animate-load {
+  opacity: 0;
+  animation: fadeRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-delay-1 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-2 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-3 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-4 {
+  animation-delay: 400ms;
+}
+
+/* IntersectionObserver Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 80ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 160ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 320ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 400ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 480ms;
+}
+
+/* Reduced Motion Overrides (WCAG 2.2 Requirement) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-stagger > *,
+  .animate-load {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-animated-name {
+    animation: none !important;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .typewriter-cursor {
+    display: none !important;
+  }
+}

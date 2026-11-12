@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Hareram Kushwaha, Software Engineer</title>
+  <meta name="description" content="Explore software engineering case studies, systems architecture, and web projects designed and engineered by Hareram Kushwaha.">
+  <link rel="canonical" href="https://hareramkushwaha.com.np/projects/">
+  <meta name="theme-color" content="#0b1220">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects | Hareram Kushwaha, Software Engineer">
+  <meta property="og:description" content="Explore software engineering case studies and systems architecture designed by Hareram Kushwaha.">
+  <meta property="og:url" content="https://hareramkushwaha.com.np/projects/">
+  <meta property="og:image" content="https://hareramkushwaha.com.np/assets/og-image.png">
+  <meta property="og:site_name" content="Hareram Kushwaha">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects | Hareram Kushwaha, Software Engineer">
+  <meta name="twitter:description" content="Explore software engineering case studies and systems architecture designed by Hareram Kushwaha.">
+  <meta name="twitter:image" content="https://hareramkushwaha.com.np/assets/og-image.png">
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts Preconnect & Display Swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+
+  <!-- Theme Script (Inline to prevent FOUC) -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('hk-portfolio-theme');
+      const theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGZW5VR7ZD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HGZW5VR7ZD');
+  </script>
+
+  <!-- Structured Data: BreadcrumbList & CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hareramkushwaha.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://hareramkushwaha.com.np/projects/"
+          }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hareramkushwaha.com.np/projects/#webpage",
+        "url": "https://hareramkushwaha.com.np/projects/",
+        "name": "Engineering Projects and Case Studies",
+        "description": "Filterable archive of software engineering case studies and systems projects by Hareram Kushwaha."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="site-logo" aria-label="Hareram Kushwaha Homepage">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#111a2e"/>
+          <path d="M18 20V44M18 32H28M28 20V44" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+          <path d="M36 20V44M46 20L36.5 32L46 44" stroke="#14b8a6" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Hareram<span class="logo-accent">.</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary site navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/projects/" class="nav-link active" aria-current="page">Projects</a>
+        <a href="/skills/" class="nav-link">Skills</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme mode">
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/about/" class="mobile-nav-link">About</a>
+      <a href="/projects/" class="mobile-nav-link active">Projects</a>
+      <a href="/skills/" class="mobile-nav-link">Skills</a>
+      <a href="/contact/" class="mobile-nav-link">Contact</a>
+      <a href="/resume/" class="mobile-nav-link" style="color: var(--accent-teal);">Resume (PDF)</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="container breadcrumbs">
+      <nav aria-label="Breadcrumbs">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item"><a href="/">Home</a></li>
+          <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+          <li class="breadcrumbs-item" aria-current="page">Projects</li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Case Studies</span>
+          <h1 class="section-title">Engineering Projects &amp; Architectures</h1>
+          <p class="section-subtitle">
+            An in-depth look at systems I have designed and built. Filter by specialization below to view problem statements, architecture trade-offs, and outcomes.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar reveal" role="toolbar" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Systems (3)</button>
+          <button type="button" class="filter-btn" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
+          <button type="button" class="filter-btn" data-filter="backend" aria-pressed="false">Backend &amp; Distributed</button>
+          <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">High-Performance Web</button>
+        </div>
+
+        <!-- Filterable Grid -->
+        <div class="projects-grid projects-grid-3 reveal-stagger">
+          <!-- Project 1: Trinity Palace -->
+          <article class="project-card spotlight-card" data-category="web fullstack">
+            <div class="project-thumbnail">
+              <img src="/assets/projects/trinity-palace.webp" alt="Trinity Palace luxury resort marketing website preview" width="600" height="375" loading="lazy">
+            </div>
+            <div class="project-content">
+              <span class="project-category">High-Performance Web &bull; Commercial</span>
+              <h2 class="project-title">
+                <a href="/projects/trinity-palace/">Trinity Palace Website</a>
+              </h2>
+              <p class="project-excerpt">
+                Marketing platform for a premier wedding and resort destination in Bokaro. Built with an 80:20 gold-and-white minimal aesthetic, smooth 60fps animations, zero-dependency vanilla JS, and sub-second load times.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Modular CSS</span>
+                <span class="tech-tag">Vanilla JS</span>
+                <span class="tech-tag">IntersectionObserver</span>
+                <span class="tech-tag">SEO &amp; CWV</span>
+              </div>
+              <div class="project-actions">
+                <a href="/projects/trinity-palace/" class="project-link-cta">
+                  <span>Read Full Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: BajarNepal -->
+          <article class="project-card spotlight-card" data-category="backend fullstack">
+            <div class="project-thumbnail">
+              <img src="/assets/projects/bajarnepal.webp" alt="BajarNepal UML system architecture and entity models preview" width="600" height="375" loading="lazy">
+            </div>
+            <div class="project-content">
+              <span class="project-category">Systems Architecture &bull; Collaborative</span>
+              <h2 class="project-title">
+                <a href="/projects/bajarnepal/">BajarNepal Platform</a>
+              </h2>
+              <p class="project-excerpt">
+                Group software engineering project modeling a nationwide multi-vendor marketplace. Authored comprehensive UML class diagrams in draw.io, formalizing entity relationships, role-based access control, and transaction boundaries.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">System Design</span>
+                <span class="tech-tag">draw.io</span>
+                <span class="tech-tag">UML Modeling</span>
+                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+              <div class="project-actions">
+                <a href="/projects/bajarnepal/" class="project-link-cta">
+                  <span>Read Full Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Distributed Task Engine -->
+          <article class="project-card spotlight-card" data-category="backend">
+            <div class="project-thumbnail">
+              <img src="/assets/projects/distributed-task-engine.webp" alt="Distributed Task Engine architecture diagram and queue dashboard preview" width="600" height="375" loading="lazy">
+            </div>
+            <div class="project-content">
+              <span class="project-category">Distributed Systems &bull; Backend</span>
+              <h2 class="project-title">
+                <a href="/projects/distributed-task-engine/">Distributed Task Engine</a>
+              </h2>
+              <p class="project-excerpt">
+                Asynchronous job orchestrator and worker pool using Redis streams, rate limiting, automatic backoff retries, and live job state telemetries over WebSockets.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+              <div class="project-actions">
+                <a href="/projects/distributed-task-engine/" class="project-link-cta">
+                  <span>Read Full Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Open Source Repositories Notice -->
+        <div class="callout-box reveal" style="margin-top: var(--space-12); border-left-color: var(--accent-indigo);">
+          <h4>Open Source Repositories on GitHub</h4>
+          <p style="font-size: var(--text-sm); margin-bottom: var(--space-3); color: var(--text-muted);">
+            In addition to the systems detailed above, you can explore algorithmic implementations, utilities, and academic projects directly on my GitHub repository list.
+          </p>
+          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <span>Explore ha-re-ram on GitHub</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="site-logo">
+            <span class="logo-text">Hareram Kushwaha<span class="logo-accent">.</span></span>
+          </a>
+          <p>
+            Software Engineer &bull; B.Tech Computer Science Engineering (KPRIET). Based in Coimbatore, India; open to relocation and remote engineering teams.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/about/" class="footer-link">About &amp; Journey</a></li>
+            <li><a href="/projects/" class="footer-link">Engineering Projects</a></li>
+            <li><a href="/skills/" class="footer-link">Technical Skills</a></li>
+            <li><a href="/resume/" class="footer-link">Resume &amp; PDF</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Connect &amp; Legal</div>
+          <ul class="footer-links">
+            <li><a href="/contact/" class="footer-link">Contact Form</a></li>
+            <li><a href="mailto:hareramkushwaha054@gmail.com" class="footer-link">Direct Email</a></li>
+            <li><a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a></li>
+            <li><a href="[ADD: LinkedIn URL - https://linkedin.com/in/...]" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Hareram Kushwaha. Built for performance, zero layout shift, and WCAG 2.2 AA accessibility.
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:hareramkushwaha054@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/navigation.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+  <script src="/js/project-filter.js" defer></script>
+</body>
+</html>

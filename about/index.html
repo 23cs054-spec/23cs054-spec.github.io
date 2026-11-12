@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Hareram Kushwaha, Software Engineer</title>
+  <meta name="description" content="Background, engineering philosophy, education at KPRIET, and technical journey of Hareram Kushwaha, software engineer building scalable systems.">
+  <link rel="canonical" href="https://hareramkushwaha.com.np/about/">
+  <meta name="theme-color" content="#0b1220">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About | Hareram Kushwaha, Software Engineer">
+  <meta property="og:description" content="Background, engineering philosophy, and technical journey of Hareram Kushwaha.">
+  <meta property="og:url" content="https://hareramkushwaha.com.np/about/">
+  <meta property="og:image" content="https://hareramkushwaha.com.np/assets/og-image.png">
+  <meta property="og:site_name" content="Hareram Kushwaha">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | Hareram Kushwaha, Software Engineer">
+  <meta name="twitter:description" content="Background, engineering philosophy, and technical journey of Hareram Kushwaha.">
+  <meta name="twitter:image" content="https://hareramkushwaha.com.np/assets/og-image.png">
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts Preconnect & Display Swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+
+  <!-- Theme Script (Inline to prevent FOUC) -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('hk-portfolio-theme');
+      const theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGZW5VR7ZD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HGZW5VR7ZD');
+  </script>
+
+  <!-- Structured Data: BreadcrumbList & AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hareramkushwaha.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://hareramkushwaha.com.np/about/"
+          }
+        ]
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://hareramkushwaha.com.np/about/#webpage",
+        "url": "https://hareramkushwaha.com.np/about/",
+        "name": "About Hareram Kushwaha",
+        "description": "Background, education, and engineering principles of Hareram Kushwaha.",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Hareram Kushwaha",
+          "jobTitle": "Software Engineer",
+          "alumniOf": "KPR Institute of Engineering and Technology (KPRIET)"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="site-logo" aria-label="Hareram Kushwaha Homepage">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#111a2e"/>
+          <path d="M18 20V44M18 32H28M28 20V44" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+          <path d="M36 20V44M46 20L36.5 32L46 44" stroke="#14b8a6" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Hareram<span class="logo-accent">.</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary site navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about/" class="nav-link active" aria-current="page">About</a>
+        <a href="/projects/" class="nav-link">Projects</a>
+        <a href="/skills/" class="nav-link">Skills</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme mode">
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/about/" class="mobile-nav-link active">About</a>
+      <a href="/projects/" class="mobile-nav-link">Projects</a>
+      <a href="/skills/" class="mobile-nav-link">Skills</a>
+      <a href="/contact/" class="mobile-nav-link">Contact</a>
+      <a href="/resume/" class="mobile-nav-link" style="color: var(--accent-teal);">Resume (PDF)</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="container breadcrumbs">
+      <nav aria-label="Breadcrumbs">
+        <ol class="breadcrumbs-list">
+          <li class="breadcrumbs-item"><a href="/">Home</a></li>
+          <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+          <li class="breadcrumbs-item" aria-current="page">About</li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Engineering Profile</span>
+          <h1 class="section-title">Disciplined Engineering &amp; Foundations</h1>
+          <p class="section-subtitle">
+            A background rooted in computer science fundamentals, modular software architecture, and international perspective.
+          </p>
+        </div>
+
+        <!-- 3 Required Prose Paragraphs -->
+        <div class="reveal" style="display: flex; flex-direction: column; gap: var(--space-6); max-width: 75ch; margin-bottom: var(--space-12);">
+          <div>
+            <h2 style="font-size: var(--text-xl); margin-bottom: var(--space-2); color: var(--text-primary);">What I Build</h2>
+            <p>
+              I build reliable web applications, distributed backend services, and structured system architectures. Whether architecting high-concurrency message queues in Node.js, designing normalized PostgreSQL relational schemas, or developing commercial frontend interfaces with sub-second paint times, my focus centers on resilience, clarity, and predictable execution. I prioritize native web primitives over bloated abstractions, ensuring software remains performant across constrained networks and high traffic loads.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="font-size: var(--text-xl); margin-bottom: var(--space-2); color: var(--text-primary);">How I Work</h2>
+            <p>
+              My development workflow begins before code is written. I map out system boundaries, data contracts, and UML class diagrams to validate assumptions early. In code, I enforce strict typing, separation of concerns, and comprehensive automated testing. I maintain disciplined Git hygiene with atomic commits, clear pull request documentation, and continuous integration checks. Writing code that is immediately understandable to teammates and future maintainers is as vital to me as passing unit tests.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="font-size: var(--text-xl); margin-bottom: var(--space-2); color: var(--text-primary);">What I'm Learning Next &amp; Aspirations</h2>
+            <p>
+              I am deepening my expertise in distributed consensus protocols, event-driven microservices orchestration, and Linux container internals. Originally from Nepal and currently completing my degree in Coimbatore, India, I bring an adaptable, cross-cultural perspective to engineering teams. Looking forward, I am open to international engineering roles and remote teams that demand technical rigor and problem-solving velocity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Facts Matrix -->
+        <div class="case-study-meta-grid reveal">
+          <div>
+            <div class="meta-item-label">Degree</div>
+            <div class="meta-item-value">B.Tech in Computer Science</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Institution</div>
+            <div class="meta-item-value">KPRIET, Coimbatore</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Academic Merit</div>
+            <div class="meta-item-value">CGPA 7.9 / 10.0</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Availability</div>
+            <div class="meta-item-value">Full-Time &bull; [ADD: June 2025]</div>
+          </div>
+        </div>
+
+        <!-- Timeline of Learning & Experience -->
+        <div class="section-header reveal" style="margin-top: var(--space-16);">
+          <span class="section-tag">Chronology</span>
+          <h2 class="section-title">Timeline of Learning &amp; Projects</h2>
+          <p class="section-subtitle">Milestones across computer science training, system design, and production delivery.</p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-date">[ADD: Month Year - e.g., 2024 &ndash; Present]</div>
+            <h3 class="timeline-title">Final-Year Engineering &amp; Distributed Systems</h3>
+            <div class="timeline-subtitle">KPR Institute of Engineering and Technology (KPRIET)</div>
+            <p style="font-size: var(--text-sm); color: var(--text-muted);">
+              Focusing on advanced distributed systems, backend concurrency patterns, and asynchronous message queue processing. Maintaining a consistent academic standard with a 7.9 CGPA while building open-source tools and production applications.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-date">2024</div>
+            <h3 class="timeline-title">Lead Frontend &amp; Motion Developer &bull; Trinity Palace Website</h3>
+            <div class="timeline-subtitle">Commercial Client Project</div>
+            <p style="font-size: var(--text-sm); color: var(--text-muted);">
+              Designed and deployed a commercial web portal for a premium luxury wedding resort in Bokaro. Implemented an 80:20 gold-and-white visual hierarchy with zero-dependency CSS/JS scroll performance, achieving 100% Core Web Vitals compliance.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-date">2023 &ndash; 2024</div>
+            <h3 class="timeline-title">Software Systems Designer &bull; BajarNepal Project</h3>
+            <div class="timeline-subtitle">Collaborative Engineering Group Project</div>
+            <p style="font-size: var(--text-sm); color: var(--text-muted);">
+              Constructed full-scale UML class models and domain architecture in draw.io for a national marketplace platform. Defined boundary contracts, relational integrity rules, and RESTful endpoint specifications.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-date">2021 &ndash; 2023</div>
+            <h3 class="timeline-title">Foundations of Computer Science &amp; Programming</h3>
+            <div class="timeline-subtitle">Core Coursework &amp; Practice</div>
+            <p style="font-size: var(--text-sm); color: var(--text-muted);">
+              Mastered Data Structures &amp; Algorithms, Object-Oriented Analysis, Computer Networks, Database Management Systems (DBMS), Operating Systems, and memory management principles in C++ and Java.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-12);" class="reveal">
+          <a href="/projects/" class="btn btn-primary">
+            <span>Explore Engineering Case Studies</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/resume/" class="btn btn-secondary" style="margin-left: var(--space-4);">
+            <span>Download Resume PDF</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="site-logo">
+            <span class="logo-text">Hareram Kushwaha<span class="logo-accent">.</span></span>
+          </a>
+          <p>
+            Software Engineer &bull; B.Tech Computer Science Engineering (KPRIET). Based in Coimbatore, India; open to relocation and remote engineering teams.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/about/" class="footer-link">About &amp; Journey</a></li>
+            <li><a href="/projects/" class="footer-link">Engineering Projects</a></li>
+            <li><a href="/skills/" class="footer-link">Technical Skills</a></li>
+            <li><a href="/resume/" class="footer-link">Resume &amp; PDF</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Connect &amp; Legal</div>
+          <ul class="footer-links">
+            <li><a href="/contact/" class="footer-link">Contact Form</a></li>
+            <li><a href="mailto:hareramkushwaha054@gmail.com" class="footer-link">Direct Email</a></li>
+            <li><a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a></li>
+            <li><a href="[ADD: LinkedIn URL - https://linkedin.com/in/...]" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Hareram Kushwaha. Built for performance, zero layout shift, and WCAG 2.2 AA accessibility.
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:hareramkushwaha054@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/navigation.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+</body>
+</html>
