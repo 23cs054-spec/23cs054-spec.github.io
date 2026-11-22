@@ -16,8 +16,8 @@
     _pendingTimeouts: new Map(),
 
     init() {
-      this._buttons = Array.from(document.querySelectorAll('.filter-btn'));
-      this._cards = Array.from(document.querySelectorAll('.project-card[data-category]'));
+      this._buttons = Array.from(document.querySelectorAll('.filter-btn, .project-tab'));
+      this._cards = Array.from(document.querySelectorAll('.project-card[data-category], .eng-project-card[data-category]'));
 
       if (!this._buttons.length || !this._cards.length) return;
 
@@ -33,7 +33,7 @@
     },
 
     _isValidFilter(filter) {
-      return this._buttons.some((btn) => btn.getAttribute('data-filter') === filter);
+      return this._buttons.some((btn) => (btn.getAttribute('data-filter') || btn.getAttribute('data-tab')) === filter);
     },
 
     _initLiveRegion() {
@@ -52,7 +52,7 @@
     _bindEvents() {
       this._buttons.forEach((btn) => {
         btn.addEventListener('click', () => {
-          const target = btn.getAttribute('data-filter') || 'all';
+          const target = btn.getAttribute('data-filter') || btn.getAttribute('data-tab') || 'all';
           this.filter(target, { updateUrl: true });
         });
       });
@@ -87,12 +87,13 @@
       this._hasInitialized = true;
       this._activeFilter = nextFilter;
 
-      // 1. Sync Filter Buttons
+      // 1. Sync Filter Buttons & Tabs
       this._buttons.forEach((btn) => {
-        const filterVal = btn.getAttribute('data-filter');
+        const filterVal = btn.getAttribute('data-filter') || btn.getAttribute('data-tab');
         const isActive = filterVal === nextFilter;
         btn.classList.toggle('active', isActive);
         btn.setAttribute('aria-pressed', String(isActive));
+        btn.setAttribute('aria-selected', String(isActive));
         btn.dataset.active = String(isActive);
       });
 

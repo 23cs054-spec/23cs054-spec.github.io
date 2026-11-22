@@ -148,7 +148,9 @@ code:not(pre code) {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  display: inline;
 }
 
 /* Screen Reader Only Utility */

@@ -98,12 +98,8 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="/" class="site-logo" aria-label="Hareram Kushwaha Homepage">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="64" height="64" rx="14" fill="#111a2e"/>
-          <path d="M18 20V44M18 32H28M28 20V44" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
-          <path d="M36 20V44M46 20L36.5 32L46 44" stroke="#14b8a6" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        <span class="logo-text">Hareram<span class="logo-accent">.</span></span>
+        <img src="/assets/profile.webp" alt="Ha-re-Ram" class="logo-image" width="34" height="34" loading="eager">
+        <span class="logo-text">Ha-re-Ram</span>
       </a>
 
       <nav class="primary-nav" aria-label="Primary site navigation">
@@ -111,6 +107,8 @@
         <a href="/about/" class="nav-link">About</a>
         <a href="/projects/" class="nav-link">Projects</a>
         <a href="/skills/" class="nav-link">Skills</a>
+        <a href="/resume/" class="nav-link">Resume</a>
+
         <a href="/contact/" class="nav-link active" aria-current="page">Contact</a>
       </nav>
 
@@ -145,8 +143,8 @@
       <a href="/about/" class="mobile-nav-link">About</a>
       <a href="/projects/" class="mobile-nav-link">Projects</a>
       <a href="/skills/" class="mobile-nav-link">Skills</a>
+      <a href="/resume/" class="mobile-nav-link">Resume</a>
       <a href="/contact/" class="mobile-nav-link active">Contact</a>
-      <a href="/resume/" class="mobile-nav-link" style="color: var(--accent-teal);">Resume (PDF)</a>
     </div>
   </header>
 
@@ -269,19 +267,25 @@
               Submit your inquiry using the verified endpoint below. Messages are routed directly to my primary inbox with an automatic mailto fallback.
             </p>
 
-            <form id="contact-form" action="https://formspree.io/f/xzdojzva" method="POST">
+            <form id="contact-form" action="https://formsubmit.co/ajax/hareramkushwaha054@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New Portfolio Message for Hareram Kushwaha">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <!-- Honeypot spam trap -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
               <div class="form-group">
-                <label for="name" class="form-label">Full Name <span style="color: var(--accent-pink);">*</span></label>
+                <label for="name" class="form-label">Full Name <span style="color: var(--accent-cyan);">*</span></label>
                 <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required autocomplete="name">
               </div>
 
               <div class="form-group">
-                <label for="email" class="form-label">Your Email <span style="color: var(--accent-pink);">*</span></label>
+                <label for="email" class="form-label">Your Email <span style="color: var(--accent-cyan);">*</span></label>
                 <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required autocomplete="email">
               </div>
 
               <div class="form-group">
-                <label for="message" class="form-label">Message Details <span style="color: var(--accent-pink);">*</span></label>
+                <label for="message" class="form-label">Message Details <span style="color: var(--accent-cyan);">*</span></label>
                 <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Describe the opportunity, role, or project..." required></textarea>
               </div>
 
@@ -294,6 +298,13 @@
 
               <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
             </form>
+
+            <div style="margin-top: var(--space-4); text-align: center; font-size: var(--text-xs); color: var(--text-muted);">
+              Prefer your email client? 
+              <a href="mailto:hareramkushwaha054@gmail.com?subject=Portfolio%20Inquiry" class="inline-link" style="font-weight: 600;">
+                Email hareramkushwaha054@gmail.com directly &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -305,11 +316,12 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="/" class="site-logo">
-            <span class="logo-text">Hareram Kushwaha<span class="logo-accent">.</span></span>
+          <a href="/" class="site-logo" aria-label="Hareram Kushwaha Homepage">
+            <img src="/assets/profile.webp" alt="Ha-re-Ram" class="logo-image" width="34" height="34" loading="lazy">
+            <span class="logo-text">Hareram Kushwaha</span>
           </a>
           <p>
-            Software Engineer &bull; B.Tech Computer Science Engineering student at KPRIET, Coimbatore, India.
+            Software Engineer &bull; B.E. Computer Science and Engineering student at KPR Institute of Engineering and Technology, Coimbatore, India.
           </p>
         </div>
 
@@ -339,7 +351,7 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 Hareram Kushwaha. Clean static portfolio engineered for performance and accessibility.
+          &copy; 2024 Hareram Kushwaha. All rights reserved.
         </div>
         <div class="footer-social-links">
           <a href="https://github.com/ha-re-ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">

@@ -149,7 +149,7 @@
               if (isDecimal) {
                 el.textContent = `${currentVal.toFixed(1)}${suffix}`;
               } else {
-                el.textContent = `${Math.floor(currentVal)}${suffix}`;
+                el.textContent = `${Math.round(currentVal)}${suffix}`;
               }
 
               if (progress < 1) {

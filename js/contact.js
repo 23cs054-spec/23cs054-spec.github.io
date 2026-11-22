@@ -166,29 +166,66 @@
           );
         }, 400);
       } else {
-        // Live API Submission
+        // Live API Submission via FormSubmit
         try {
+          const payload = {
+            name: validData.name,
+            email: validData.email,
+            message: validData.message,
+            _subject: `New Portfolio Message from ${validData.name}`,
+            _replyto: validData.email
+          };
+
           const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
               Accept: 'application/json'
             },
-            body: JSON.stringify(validData)
+            body: JSON.stringify(payload)
           });
 
-          if (response.ok) {
+          const data = await response.json().catch(() => ({}));
+
+          if (response.ok && (data.success === 'true' || data.success === true)) {
+            this._setState(
+              STATES.SUCCESS,
+              `Thank you, ${validData.name}! Your message has been routed directly to hareramkushwaha054@gmail.com.`
+            );
+            this._formEl.reset();
+          } else if (data.message && data.message.includes('Activation')) {
+            this._setState(
+              STATES.SUCCESS,
+              `Message sent! Note: A one-time activation was sent to the inbox to activate auto-routing.`
+            );
+            this._formEl.reset();
+          } else if (response.ok) {
             this._setState(STATES.SUCCESS, 'Thank you! Your message has been sent successfully.');
             this._formEl.reset();
           } else {
-            throw new Error(`Server returned HTTP ${response.status}`);
+            throw new Error(data.message || `Server returned HTTP ${response.status}`);
           }
         } catch (err) {
+          const subject = encodeURIComponent(`Portfolio Inquiry from ${validData.name}`);
+          const body = encodeURIComponent(
+            `Name: ${validData.name}\nEmail: ${validData.email}\n\nMessage:\n${validData.message}`
+          );
+          const mailtoUrl = `mailto:hareramkushwaha054@gmail.com?subject=${subject}&body=${body}`;
+
           this._setState(
             STATES.ERROR,
-            'Unable to send automatically. Please email hareramkushwaha054@gmail.com directly.',
+            'Unable to send via relay. Click below to send directly using your email client:',
             true
           );
+
+          if (this._statusEl) {
+            this._statusEl.innerHTML = `
+              <span>Automatic relay issue.</span>
+              <a href="${mailtoUrl}" class="btn btn-sm btn-primary" style="margin-top: 8px; display: inline-flex;">
+                Send via Email App &rarr;
+              </a>
+            `;
+          }
         }
       }
     },

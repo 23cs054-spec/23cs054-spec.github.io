@@ -1,6 +1,6 @@
 # Hareram Kushwaha &mdash; Software Engineer Portfolio
 
-A production-grade, zero-build, multi-page personal portfolio website for **Hareram Kushwaha**, B.Tech Computer Science Engineering student at KPR Institute of Engineering and Technology (KPRIET), Coimbatore.
+A production-grade, zero-build, multi-page personal portfolio website for **Hareram Kushwaha**, B.E. Computer Science and Engineering student at KPR Institute of Engineering and Technology (KPRIET), Coimbatore.
 
 - **Canonical Domain:** [https://hareramkushwaha.com.np](https://hareramkushwaha.com.np)
 - **Deployment Platform:** GitHub Pages with a custom domain (zero build step)
