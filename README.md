@@ -2,7 +2,7 @@
 
 A production-grade, zero-build, multi-page personal portfolio website for **Hareram Kushwaha**, B.E. Computer Science and Engineering student at KPR Institute of Engineering and Technology (KPRIET), Coimbatore.
 
-- **Canonical Domain:** [https://hareramkushwaha.com.np](https://hareramkushwaha.com.np)
+- **Canonical Domain:** [https://hareramkushwaha.name.np](https://hareramkushwaha.name.np)
 - **Deployment Platform:** GitHub Pages with a custom domain (zero build step)
 - **Design System:** Deep navy palette (#0b1220), subtle teal-to-indigo gradient accents, modular CSS custom properties, and dark/light mode toggle with zero flash on load.
 - **Accessibility & Performance:** WCAG 2.2 AA compliant, `@media (prefers-reduced-motion: reduce)` support, and optimized for sub-second Core Web Vitals.
@@ -13,7 +13,7 @@ A production-grade, zero-build, multi-page personal portfolio website for **Hare
 
 ```
 hareram/
-├── CNAME                                  # Custom apex domain (hareramkushwaha.com.np)
+├── CNAME                                  # Custom apex domain (hareramkushwaha.name.np)
 ├── robots.txt                             # Web crawler instructions linking to sitemap.xml
 ├── sitemap.xml                            # Complete XML sitemap with all routes and priorities
 ├── site.webmanifest                       # Progressive Web App manifest
@@ -106,11 +106,11 @@ git push -u origin main
    - **Source:** Deploy from a branch
    - **Branch:** `main` / `/ (root)`
    - Click **Save**.
-3. Under **Custom domain**, enter `hareramkushwaha.com.np`.
+3. Under **Custom domain**, enter `hareramkushwaha.name.np`.
 4. Ensure **Enforce HTTPS** is checked.
 
 ### Step 3: DNS Records (Domain Registrar)
-Ensure the following DNS records are set at your registrar for `hareramkushwaha.com.np`:
+Ensure the following DNS records are set at your registrar for `hareramkushwaha.name.np`:
 - **CNAME:** `@` or `www` pointing to `ha-re-ram.github.io`
 - Or **A Records** pointing to GitHub Pages IP addresses:
   ```

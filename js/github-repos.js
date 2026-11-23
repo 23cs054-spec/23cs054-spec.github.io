@@ -15,7 +15,7 @@
     "stars": 0,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/Saantvana",
-    "homepage": "https://hareramkushwaha.com.np/Saantvana/",
+    "homepage": "https://hareramkushwaha.name.np/Saantvana/",
     "updated_at": "2026-11-22"
   },
   {
@@ -25,7 +25,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/AARAMBH",
-    "homepage": "http://hareramkushwaha.com.np/AARAMBH/",
+    "homepage": "https://hareramkushwaha.name.np/AARAMBH/",
     "updated_at": "2026-11-15"
   },
   {
@@ -35,7 +35,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/Serenity-Breathing",
-    "homepage": "https://serenity.hareramkushwaha.com.np/",
+    "homepage": "https://serenity.hareramkushwaha.name.np/",
     "updated_at": "2026-11-15"
   },
   {
@@ -45,7 +45,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/ha-re-ram.github.io",
-    "homepage": "https://hareramkushwaha.com.np/",
+    "homepage": "https://hareramkushwaha.name.np/",
     "updated_at": "2026-11-11"
   },
   {
@@ -65,7 +65,7 @@
     "stars": 0,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/Aurelia-Palace-",
-    "homepage": "https://hareramkushwaha.com.np/Aurelia-Palace-/",
+    "homepage": "https://hareramkushwaha.name.np/Aurelia-Palace-/",
     "updated_at": "2026-10-15"
   },
   {
@@ -135,7 +135,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/SkyCast",
-    "homepage": "https://hareramkushwaha.com.np/SkyCast/",
+    "homepage": "https://hareramkushwaha.name.np/SkyCast/",
     "updated_at": "2026-09-06"
   },
   {
@@ -145,7 +145,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/Cara",
-    "homepage": "https://hareramkushwaha.com.np/Cara/",
+    "homepage": "https://hareramkushwaha.name.np/Cara/",
     "updated_at": "2026-09-06"
   },
   {
@@ -165,7 +165,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/OOSE-Lab-UML-Diagram",
-    "homepage": "https://hareramkushwaha.com.np/OOSE-Lab-UML-Diagram/",
+    "homepage": "https://hareramkushwaha.name.np/OOSE-Lab-UML-Diagram/",
     "updated_at": "2026-09-06"
   },
   {
@@ -175,7 +175,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/online-voting-system",
-    "homepage": "https://vote.hareramkushwaha.com.np",
+    "homepage": "https://vote.hareramkushwaha.name.np",
     "updated_at": "2026-09-06"
   },
   {
@@ -185,7 +185,7 @@
     "stars": 1,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/kotodama-website",
-    "homepage": "http://hareramkushwaha.com.np/kotodama-website/",
+    "homepage": "https://hareramkushwaha.name.np/kotodama-website/",
     "updated_at": "2026-09-06"
   },
   {
@@ -195,7 +195,7 @@
     "stars": 2,
     "forks": 0,
     "url": "https://github.com/ha-re-ram/fedora-wifi-hotspot",
-    "homepage": "https://hareramkushwaha.com.np/fedora-wifi-hotspot/",
+    "homepage": "https://hareramkushwaha.name.np/fedora-wifi-hotspot/",
     "updated_at": "2026-09-06"
   },
   {
